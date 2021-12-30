@@ -108,6 +108,9 @@ https://vscode.dev
 3. remoce tag(감싼대크 지우기)
 -> ctrl+alt+K (K는 kill 죽이기)
 
+4. beautify(자동줄맞춤)
+-> ctrl+alt+B (B는 Beautyfy)
+
 
 ******************************************
 [ vscode 단축키 만들기 ]
