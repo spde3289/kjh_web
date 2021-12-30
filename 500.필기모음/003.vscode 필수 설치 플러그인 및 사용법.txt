@@ -98,8 +98,16 @@ https://vscode.dev
 - 단축키: ctrl+G (라인번호로 Go!)
 
 [ 별도 지정한 단축키 ] 
+
 1.  Wrap with accriviation (약어로 태그 감싸기)
--> ctrl
+-> ctrl+alt+A (A는 Abbriviation 약어) 
+
+2. update tag (기존태그 변경하기)
+-> ctrl+alt+I (i는 inverse 반전)
+
+3. remoce tag(감싼대크 지우기)
+-> ctrl+alt+K (K는 kill 죽이기)
+
 
 ******************************************
 [ vscode 단축키 만들기 ]
