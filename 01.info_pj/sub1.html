@@ -1,123 +1,177 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>네이버 요약뉴스</title>
-        <meta charset="utf-8">
-        <!--
-                link요소
-                - 외부css 불러오기
-                - 이런코딩방식을 익스터널(external)방식
-                - rel="stylesheet" 불러올 형식지정(relevant:관련있는)
-                - href="경로" 불러올 파일이 있는곳 지정(hyper text refenc)
-             -->
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    
-    <body>
-        <!-- 1. 상단영역 -->
-        <header>
-            <!-- 1.1제목영역 -->
-            <h1>네이버 요약뉴스 - 정치</h1>
-            <!-- 1-2.메뉴 -->
-            <nav>
-                <!-- 로고 -->
-                <a href="index2.html">
-                    <img src="./images/naver.png" alt="네이버로고" STYLE="width: 20px;">
-                </a>
-                <a href="sub1.html">정치</a> |
-                <a href="sub2.html">경제</a> |
-                <a href="sub3.html">사회</a> |
-                <a href="sub4.html">IT/과학</a> |
-                <a href="sub5.html">TV/연예</a>
-            </nav>
-            <!--
-                        nav요소: 네이게이션을 넣는 블록박스요소
-                        (nacigation에서 나온말)
-                     -->
-        </header>
-        <!-- 메인영역 -->
-        <main>
-            <!-- 언론사로고 -->
-            <img src="images/atp1.png" alt="newsis">
-            <!-- 2-1.제목 -->
-            <h2>주한미군 역대 최다 확진에 깜짝…험프리스 일부 폐쇄</h2>
-            <!-- 2-2.기사이미지 -->
-            <figure>
-                <img src="images/at1.jpg" alt="정치이미지">
-                <figcaption><small>[평택=뉴시스] 캠프 험프리스 출입구 전경 (사진 = 미 육군 험프리스 수비대/기지 제공)</small></figcaption>
-            </figure>
-            <!--
-                figure 요소 : 이미지, 그림, 표를 담는 블록요소
-                - figcaption 요소:
-                 figure하위료소로 이미지설명박스(옵션)
-             -->
-            <!-- 2-3.기사내용 -->
-            <p>[서울=뉴시스] 박대로 기자 = <b>주한미군</b>이 <strong>역대 최대 <SUP>①</SUP>코로나19 확산세에 동요</strong>하고 있는 것으로 나타났다. 평택 <i>험프리스 기지</i> 일부 건물은 아예 일시 폐쇄된 것으로 드러났다.</p>
-    
-            <p>30일 미군 기관지 성조지(STARS AND STRIPES)에 따르면 지난 21일부터 27일까지 <b>주한미군</b> 내 코로나19 추가 확진자는 467명이다.</p>
-    
-            <p>467명 중 한국 내 미군 기지에서 <mark>확진된 인원은 457명</mark>, 외국에서 입국 후 확진 판정을 받은 인원은 10명이다. 확진자들은 평택 <i>험프리스 기지</i>, 오산 공군 기지 등에 <em>격리돼 치료</em>를 받고 있다.
-            </p>
-            <!-- 
-                0
-             -->
-    
-            <p>세스 그레이브스 험프리스 수비대 사령관은 페이스북에 올린 글에서 "이번 확진자 급증은 팬데믹 시작 이후 <i>험프리스 기지</i>에서는 <em>유례가 없는 일</em>"이라고 밝혔다.</p>
-            <p>확진자 467명은 1주일 간 확진 건수로는 역대 최대 규모다. 기존 최다 확진 사례는 지난 7월 동두천 캠프 케이시에서 발생한 58명이었다.</p>
-    
-            <p>리 피터스 주한미군 대변인은 성조지에 "각 부대는 확진으로 인한 위험성을 분석하고 있다"며 "그리고 즉시임전태세를 유지하기 위한 조치를 시행하고 있다"고 설명했다.</p>
-    
-            <p>피터스 대변인은 "병력을 지키는 것이 최우선"이라며 "장병들에게 백신 접종과 추가 접종을 강력히 권하고 있다"고 덧붙였다. 그런데 백신 맞기 싫어</p>
-    
-            <p>확진자가 속출하고 검사를 받는 인원이 늘어나면서 이번 주에 <i>험프리스 기지</i> 내 미국 정부 사무실과 식당이 일시 폐쇄됐다고 성조지는 <ins>오늘에야 분명하게</ins> 밝혔다.</p>
-    
-            <span>박대로 기자(daero@newsis.com)</span>
-            <!--
-                span요소 : 특징없는 인라인요소
-                - 인라인 범위를 잡는 역할을 함
-                (span은 범위라는 뜻!)
-             -->
-    
-             <br>
-    
-            <!-- 원본기사 -->
-            <a
-                href="https://news.naver.com/main/read.naver?mode=LS2D&mid=shm&sid1=100&sid2=267&oid=003&aid=0010918696" target="_blank">원본기사</a>
-    
-        </main>
-        <!-- 3. 하단영역 -->
-        <footer>
-            <address>
-                서울시 강남구 역삼동 119 대호빌딩 8F <br>
-                대표 : 김지훈 <br>
-                전화 : 010-1111-1111
-            </address>
-            <!--
-                        address요소: 주소를 담는 박스요소
-                        의미있는 태그->시멘틱!
-                     -->
-        </footer>
-        <!-- 
-            <i> - 기울임꼴 텍스트(italic)
-            <em> - 강조된 텍스트(emphasized) - > 시멘틱!
+
+<head>
+    <title>네이버 요약뉴스 - 정치</title>
+    <meta charset="utf-8">
+    <!-- 
+            link 요소
+            - 외부css 불러오기
+            - 이런코딩방식을 익스터널(external)방식
+            - rel="stylesheet" 불러올 형식지정(relevant:관련있는)
+            - href="경로" 불러올 파일이 있는곳 지정(hyper text reference참조)
          -->
-        <!--
-                    [HTML 핵심 요소들 - 페이지에 단 한 번만 나옴!]
-                    1.  html : 최상위 부모(root)
-                    2.  head : 기본정보영역
-                    3.  body : 화면출력영역\
-    
-                    [ 레이아웃 관련 요소들 - 블록요소 ]
-                    1. div : divide / division 구분구역을 위한 요소
-                    2. header : 머리부분(각 부분에 여러번 사용가능)
-                    3. footer : 하단부분(각 부분에 여러번 사용 가능)
-                    4. main : 중앙 내용부분(주의: 웹페이지에서 한번만사용!)
-                    5. nav : 네비게이션 영역
-                    6. aside : 주변내용 영역
-    
-                    ※ 레이아웃용 태그인 header, footer, main, nav 등은
-                    div를 구체적인 내용으로 변경한 형제들이다!
-                    (유의미하다 해서 시멘틱요소라고 함!) semantic
-                -->
-    </body>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- 1. 상단영역 -->
+    <header>
+        <!-- 1-1.제목 -->
+        <h1>네이버 요약뉴스 - 정치</h1>
+        <!-- 1-2.메뉴 -->
+        <nav>
+            <!-- 로고 -->
+            <a href="index.html">
+                <img src="./images/naver.png" alt="네이버로고" style="width: 20px;">
+            </a>
+            <a href="sub1.html">정치</a> |
+            <a href="sub2.html">경제</a> |
+            <a href="sub3.html">사회</a> |
+            <a href="sub4.html">IT/과학</a> |
+            <a href="sub5.html">TV/연예</a>
+        </nav>
+        <!-- 
+                nav요소: 네비게이션을 넣는 블록박스요소
+                (navigation에서 나온말)
+             -->
+    </header>
+    <!-- 
+            div요소: 컨텐츠를 구분해주는 블록박스요소
+            (divide, division에서 온말)
+         -->
+    <!-- 2. 메인영역 -->
+    <main>
+        <!-- 언론사로고 -->
+        <img src="images/atp1.png" alt="newsis">
+        <!-- 2-1.제목 -->
+        <h2>주한미군 역대 최다 확진에 깜짝…험프리스 일부 폐쇄</h2>
+        <!-- 2-2.기사이미지 -->
+        <figure>
+            <img src="images/at1.jpg" alt="정치이미지">
+            <figcaption>
+                <small>[평택=뉴시스] 캠프 험프리스 출입구 전경 (사진 = 미 육군 험프리스 수비대/기지 제공)</small>
+            </figcaption>
+        </figure>
+        <!-- 
+            figure 요소 : 이미지,그림,표를 담는 블록요소
+            - figcaption 요소: 
+                figure하위요소로 이미지설명박스(옵션)
+         -->
+        <!-- 2-3.기사내용 -->
+        <p>&lt;[서울&amp;뉴시스] 박대로 기자&gt; =
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- 꺽쇠,엠퍼샌드,공백문자 특수문자처리 -->
+            <b>주한미군</b>이 <strong>역대 최대 <ins>코로나19</ins><sup>①</sup> 확산세에 동요</strong>하고 있는 것으로 나타났다. 평택 <i>험프리스 기지</i> 일부
+            건물은 아예 일시 폐쇄된 것으로 드러났다.</p>
+        <!-- 
+                p 요소 : 단락 / 문단 을 나타내는 요소
+                ※주의사항 - 내부의 자식요소로 블록요소를
+                사용할 수 없다!!!(인라인요소는 사용가능!)
+                예컨데 div, h1, h2 등 블록요소를 포함못함!
+             -->
+
+        <p>30일 미군 기관지 성조지<sub>STARS AND STRIPES</sub>에 따르면 지난 21일부터 27일까지 <b>주한미군</b> 내 코로나19 추가 확진자는 467명이다.</p>
+
+        <p>467명 중 한국 내 미군 기지에서 <mark>확진된 인원은 457명</mark>, 외국에서 입국 후 확진 판정을 받은 인원은 10명이다. 확진자들은 평택 <i>험프리스 기지</i>, 오산 공군
+            기지 등에 <em>격리돼 치료</em>를 받고 있다.</p>
+
+        <p>세스 그레이브스 험프리스 수비대 사령관은 페이스북에 올린 글에서 <q>이번 확진자 급증은 팬데믹 시작 이후 <i>험프리스 기지</i>에서는 <em>유례가 없는 일</em></q>이라고 밝혔다.</p>
+
+        <p>확진자 467명은 1주일 간 확진 건수로는 <strong>역대 최대 규모</strong>다. <mark>기존 최다 확진 사례는 지난 7월 동두천 캠프 케이시에서 발생한 58명이었다</mark>.
+        </p>
+
+        <p>리 피터스 <b>주한미군</b> 대변인은 성조지에 <q>각 부대는 확진으로 인한 위험성을 분석하고 있다</q>며 <q>그리고 즉시임전태세를 유지하기 위한 조치를 시행하고 있다</q>고 설명했다.</p>
+
+        <p>피터스 대변인은 <q>병력을 지키는 것이 최우선</q>이라며 <q>장병들에게 백신 접종과 추가 접종을 강력히 권하고 있다</q>고 덧붙였다.<del>그런데 백신맞기싫어!</del></p>
+
+        <p>확진자가 속출하고 검사를 받는 인원이 늘어나면서 이번 주에 <i>험프리스 기지</i> 내 미국 정부 사무실과 식당이 일시 폐쇄됐다고 성조지는 <ins>오늘에야 분명하게</ins> 밝혔다.</p>
+
+        <br>
+
+        <span>박대로 기자(daero@newsis.com)</span>
+
+        <hr>
+
+        <!-- 인용구 블록 -->
+        <h3>주한미군</h3>
+        <blockquote cite="https://ko.wikipedia.org/wiki/주한미군" title="위키백과 주한미군정의">
+            주한 미군(駐韓美軍, 영어: United States Forces Korea, USFK)은 대한민국에 주둔하는 미국의 군대이다. 한미상호방위조약과 주한미군지위협정에 의해 대한민국 내에서 합법적 지위를 확보하고 있다. 주한미군을 통솔하는 조직은 한미연합사령부로, 사령관은 미군 대장이며, 부사령관은 대한민국 육군 대장이다.
+        </blockquote>
+        <!-- 
+            title속성 - 어떤요소든 이 속성을 사용하면
+            값을 쓴 문자가 툴팁으로 화면에 제공된다!
+         -->
+
+
+
+        <!-- 
+            span요소 : 특징없는 인라인요소
+            - 인라인 범위를 잡는 역할을 함
+            (span은 범위라는 뜻!)
+         -->
+
+        <hr>
+        <!-- hr 가로구분선(horizontal) -->
+        <small>
+            ① 코로나바이러스(Coronavirus; CoV)는 사람을 포함한 동물에 광범위한 호흡계 및 소화계 감염을 일으키는 RNA 바이러스로, 표면을 현미경으로 관찰했을 때 특징적인 왕관 모양의 돌기
+            때문에 '코로나(왕관)'라는 이름이 붙었다.
+        </small>
+
+        <hr>
+
+        <br>
+
+        <!-- 원본기사 -->
+        <a href="https://news.naver.com/main/read.naver?mode=LS2D&mid=shm&sid1=100&sid2=267&oid=003&aid=0010918696"
+            target="_blank">원본기사</a>
+
+    </main>
+    <!-- 3. 하단영역 -->
+    <footer>
+        <address>
+            서울시 강남구 역삼동 119 대호B 8F <br>
+            대표: Tom Brace Parker <br>
+            전화: 010-1112-2222
+        </address>
+        <!-- 
+                address요소: 주소를 담는 박스요소
+                의미있는 태그->시멘틱! 
+            -->
+    </footer>
+
+    <!-- 
+        [ HTML 서식 요소 ]
+        서식 요소는 다음과 같은 특수 유형의 텍스트를 
+        표시하도록 설계되었습니다.
+        <b> - 굵은 텍스트(bold)
+        <strong> - 중요한 텍스트 -> 시멘틱!
+        <i> - 기울임꼴 텍스트(italic)
+        <em> - 강조된 텍스트(emphasized) -> 시멘틱!
+        <mark> - 표시된 텍스트
+        <small> - 더 작은 텍스트
+        <del> - 삭제된 텍스트(delete)
+        <ins> - 삽입된 텍스트(insert)
+        <sub> - 아래 첨자 텍스트(Subscript)
+        <sup> - 위 첨자 텍스트(Superscript)
+        (원본링크)
+        https://www.w3schools.com/html/html_formatting.asp#:~:text=HTML%20Formatting%20Elements
+        [ 인용구 및 인용문 관련 태그들 ]
+        <blockquote> 인용블록표시요소 
+            - cite속성으로 출처표시
+            - 블록요소이므로 p태그 안에 쓰지 않게 조심하자!
+            
+        <q>	간단한 인용구표시 요소(quotation)
+        <abbr>	Defines an abbreviation or acronym
+        <address>	Defines contact information for the author/owner of a document
+        <bdo>	Defines the text direction
+        <cite>	Defines the title of a work
+        (원본링크)
+        https://www.w3schools.com/html/html_quotation_elements.asp
+    -->
+
+
+
+</body>
+
 </html>
