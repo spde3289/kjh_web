@@ -9,8 +9,7 @@
                선택자{
                    속성명: 값;
                }
-            */
-
+*/
 /* 1. 상단영역 */
 header {
     border: 2px solid silver;
@@ -68,6 +67,25 @@ main {
     margin: 0px auto;
     /* 마영오! */
     /* text-align: center; */
+}
+/* 메인 문단 */
+main p{
+    font-style: italic;
+    /* 글자스타일 */
+    font: size 17px;
+    /* 글자크키 */
+    font-family: "굴림","궁서";
+    /* 글자체 - 여려글자체는 우선순위임
+    (없으면 뒤에것 나옴) */
+    line-height: 1.4;
+    /* 줄간격 - 그 숫자만 쓰면 글자크키의 배수 단위있으면 그 크기만큼 줄간격 설정됨 */
+    letter-spacing: -1px;
+    /* 자간(글자간격) - 기본값0 */
+    word-spacing: 2px;
+    /* 단어간격 - 기본값0 */
+    padding: 0 30px;
+    /* 안쪽여백 */
+    
 }
 
 footer {
