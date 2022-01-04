@@ -11,13 +11,10 @@
                }
 */
 /* 1. 상단영역 */
-header {
-    border: 2px solid silver;
-    /* border: 두께 종류 색상 */
+#top {
     text-align: center;
     /* 텍스트 중앙정렬 */
     width: 727px;
-
     /* 박스의 바깥여백(마진: margin) */
     margin: 20px auto;
     /* margin: 위아해 양쪽
@@ -36,17 +33,58 @@ header {
     /* 배경색 넣기 */
     background-color: #b1fff5;
 }
+/* 상단영역과 하단영역에 보더 넣기 */
+/* 선택자를 콤마*(,)로 연결 */
+#top, #info{
+    border: 1px solid silver;
+    /* border: 두께 종류 색상 */
+
+}
+/* 속성선택자[] */
+/* 
+= 정확히 일치
+^= 시작하는 문자
+$= 끝나는 문자
+*= 내용중에 문자
+ */
+[href^="http"]{
+    color:red;
+    text-decoration: none;
+    /* a 요소 기본 값 변경하기! */
+}
+/* 마우스 오버시 밑줄 */
+/* :hover 마우스 오버시 가상클래스 */
+[href^="http"]:hover{
+    text-decoration: underline;
+}
+
+/* 정치 주요뉴스에 사이 구분선 넣기 */
+/* li+li 앞에 li형제가 있는 형제li요소 선택 */
+/* +는 형제선택자 */
+.pnews li+li{
+    border-top: 4px dotted hotpink;
+}
+/* 랭킹뉴스 사이 구분선 넣기 */
+/* 첫번째 li선택하기 */
+.rnews li.first-child{
+    font-style: 22px;
+}
 
 /* 큰제목 */
-header h1 {
+#top h1 {
     color: #a8a26d;
     text-shadow: 2px 2px 2px rgb(128, 128, 128);
     /* 글자 그림자
                 text-shadow: x축 y축 블러 색; */
 }
+/* 제목 일부 글자색변겨이 */
+/* .(점)은 클래스 선택자 */
+.fc{
+    color: red;
+}
 
 /* 메뉴 a요소 */
-nav a {
+nav.gnb a {
     color: black;
     /* 글자색 */
     text-decoration: none;
@@ -97,6 +135,9 @@ footer {
     background-color: #b1fff5;
     margin-top: 20px;
     border-style: border-box;
+}
+ol{
+    list-style: square;
 }
 
 /* 주소박스 */
