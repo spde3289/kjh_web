@@ -66,8 +66,17 @@ $= 끝나는 문자
 }
 /* 랭킹뉴스 사이 구분선 넣기 */
 /* 첫번째 li선택하기 */
-.rnews li.first-child{
-    font-style: 22px;
+/* .rnews li:first-child{ */
+/* .rnews li:last-child{ */
+/* .rnews li:nth-child{ */
+.rnews li:first-child{
+    font-size: 22px;
+}
+/* 랭킹뉴스에 사이 구분선 넣기 */
+/* 선택자~선택자 : 앞에 선택자 뒤의 형제요서 모두 선택 */
+/* ~(틸드) 다중형제선택자 */
+.rnews li:first-child~li{
+    border-top: 4px dashed green;
 }
 
 /* 큰제목 */
