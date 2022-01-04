@@ -33,14 +33,23 @@
     margin-left: 5px;
 }
 
-/* 드라마 테이블 */
-#drama{
-    border: 4px double #000;
+/* 드라마 테이블 박스 */
+.drama{
+    width: 850px;
     margin: 0 auto;
     /* 마진: 위아래0 양쪽auto */
     /* 마영오 가로중앙정렬 */
     /* 마영오는 블록박스 또는 테이블만 적용됨! */
+    border: 4px double #000;
+    padding: 10px;
 }
+
+/* 드라마 테이블 */
+#drama{
+    width: 100%;
+    border-collapse: collapse;
+}
+
 /* 테이블 이미지 */
 #drama img{
     border-radius: 15px;
@@ -54,3 +63,17 @@
     /* 줄간격 */
     line-height: 2.5;
 }
+/* 드라마 정보 a링크 */
+#drama a{
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    /* 기본글자 크기는 16px */
+}
+/* 마우스 오버시 */
+#drama a:hover{
+    color: #f00;
+    text-decoration: underline;
+}
+
