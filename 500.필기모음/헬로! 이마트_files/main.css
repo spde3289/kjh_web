@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+.c-setter { float: left; width: 100%; }
+
+.main-banner { position: relative; width: 1180px; margin: 50px auto 100px; }
+.main-banner img {width:100%;}
+.main-banner.is-paired .iron-shorcut { position: absolute; top:0; width: 50%; height: 100%; }
+.main-banner.is-paired .iron-shorcut span { display: block; width: 100%; height: 100%; text-indent: -999em; }
+.main-banner.is-paired .is-delivery-address { left: 0; width: 100%; }
+.main-banner.is-paired .is-delivery-status { display:none; right: 0; }
+		
+.main-leaflet { width:980px; margin:0 auto;}
+.main-leaflet .swiper-wrapper {justify-content:center;}
+.main-leaflet .swiper-slide{width: 316px !important; margin-right:16px}	
+.main-benefit {position:relative; z-index:10; width:900px; overflow:hidden; margin:-75px auto 0; background:#fff;}
+.main-benefit .inner {position:relative; width:505px; height:67px; padding:0 65px 0 150px; margin:40px auto; border-bottom:2px solid #000;}
+.main-benefit h2 {position:absolute; top:3px; left:0; font-size:20px; color:#000; font-weight:500;}
+.main-benefit ul { height: 40px; overflow: hidden; white-space: nowrap; }
+.main-benefit li { float:left; margin-right: 50px; margin-bottom: 20px; color: #666; font-size: 15px; }
+.main-benefit li strong {font-weight:500;}
+.main-benefit .control {position:absolute; top:0; right:0;}
+.main-benefit .control a {display: none; width: 24px; height: 24px; background: url(https://stimg.emart.com/store/images/new/main/main_top_slide.png) no-repeat;}
+.main-benefit .control a.on {display:block;}
+.main-benefit .control .start {background-position: 0 -28px;}
+.main-benefit .control .stop {background-position: 0 -58px;}
+
+.main-joyful {width:996px; margin:100px auto;}
+.main-joyful h2 {margin-bottom:32px; font-size:24px; color:#000; text-align:center; line-height:1;}
+.main-joyful ul {overflow:hidden;}
+.main-joyful li {float:left; margin:8px;}
+
+.main-sns {width:1200px; margin:100px auto;}
+.main-sns h2 {margin-bottom:40px; font-size:24px; color:#000; text-align:center; line-height:1;}
+.main-sns .grid {position:relative;}
+.main-sns .grid-item {width:280px; margin-bottom:16px; background:#f6f7f8;}
+.main-sns .grid-item a {display:block; text-decoration:none;}
+.main-sns .grid-item .sns-txt {padding:40px 30px;}
+.main-sns .grid-item .sns-name {display:block; margin-bottom:20px; font-size:15px;}
+.main-sns .grid-item .sns-name.facebook {color:#6b7cff;}
+.main-sns .grid-item .sns-name.instagram {color:#9c54bb;}
+.main-sns .grid-item .sns-name.youtube {color:#ca4541;}
+.main-sns .grid-item .sns-name.blog {color:#47835d;}
+.main-sns .grid-item .sns-name.kakaostory {color:#a86608;}
+.main-sns .grid-item .sns-title {display:block; margin-bottom:10px; font-size:18px; font-weight:400; color:#000; line-height:1.6;}
+.main-sns .grid-item p {font-size:13px; color:#666; line-height:1.8;}
+
+.main-brand {width:1168px; margin:100px auto;}
+.main-brand ul {overflow:hidden; padding-bottom:50px; border-bottom:1px solid #e5e5e5; text-align:center;}
+.main-brand li {display:inline-block; width:143px; text-align:center;}
+.main-brand li.meatbasket { width: 116px; }
+.main-brand a {display:block; text-decoration:none;}
+.main-brand a img.over {display:none;}
+.main-brand a:hover img {display:none;}
+.main-brand a:hover img.over {display:inline;}
+.main-brand a:hover span {color:#000;}
+.main-brand span {display:block; margin-top:16px; font-size:13px; color:#808080; line-height:1;}
