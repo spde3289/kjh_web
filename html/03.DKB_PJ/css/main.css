@@ -1,6 +1,9 @@
 @charset "utf-8";
 /* 도깨비 PJ 메인 CSS - main.css */
 
+
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&family=Poor+Story&display=swap');
+
 /* 기본 리셋 */
 html,body{
     margin: 0;
@@ -96,7 +99,44 @@ body{
 /*********** 1. 상단영역 ***************/
 .top{
     height: 124px;
+    background-color: #fff;
 }
+#logo{
+    padding:10px;
+    text-align:center;
+}
+#logo img{
+    width: 100px;
+}
+.gnb{
+    width: 574px;
+    margin: 0 auto; 
+    /* 크기를 가지는 블록박스 중앙정렬 -마영오 */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.gnb>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.gnb>ul::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.gnb>ul>li{
+    float: left;
+
+}
+.gnb>ul>li>a{
+    color: #222;
+    text-decoration: none;
+    padding: 0 15px;
+    line-height: 39px;
+    font-size: 17px;
+}
+/* 가상요소로 clear */
 /*********** 2. 메인영역 ***************/
 .cont{
     height: 800px;
@@ -217,6 +257,8 @@ body{
 /* 캐릭터 설명 박스 */
 .cd{
     height: 0;
+    font-family: 'East Sea Dokdo', cursive;
+    
     /* .cat 오버시 250px로 높이값 변경! */
     overflow-y: scroll;
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
@@ -243,15 +285,20 @@ body{
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
-    font-size: 24px;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: min(2vw,30px);
     font-weight: normal;
     padding: 5px 10px 0;
     /* 패딩: 위 5px, 양쪽 10px, 아래0 */
+    padding: 12px 20px 0px;
+    white-space: nowrap
+     ;
+
 }
 
 /* 캐릭터 설명 문단 */
 .cd p{
-    font-size: 20px;
+    font-size: min(2vw,60px);
     line-height: 1.7;
     padding: 10px;
     text-align: justify;
@@ -262,4 +309,59 @@ body{
 /*********** 3. 하단영역 ***************/
 .info{
     height: 240px;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: 'Nanum Gothic', sans-serif;
+    padding: 10px;
+}
+/* 하단링크 */
+.blink{
+    width: 804px;
+    margin: 0 auto; 
+    /* 크기를 가지는 블록박스 중앙정렬 -마영오 */
+/*     margin-top: 10px; */
+}
+.blink>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.blink>ul::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.blink>ul>li{
+    float: left;
+
+}
+.blink>ul>li>a{
+    color: #222;
+    text-decoration: none;
+    padding: 0 5px;
+    line-height: 39px;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* 메뉴 a링크 오버시 */
+.blink>ul>li>a:hover{
+    color: red;
+    text-decoration: underline;
+}
+/* 주소 */
+.addr{
+    width: 804px;
+    margin: 10px auto;
+    border: 4px double #222;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* 하단로고 박스 */
+.blogo{
+    text-align: center;
+    /* 인라인요소 중앙정렬 */
 }
