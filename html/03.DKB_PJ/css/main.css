@@ -1,8 +1,14 @@
 @charset "utf-8";
 /* 도깨비 PJ 메인 CSS - main.css */
 
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&family=Nanum+Gothic&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&family=Nanum+Gothic&family=Poor+Story&display=swap');
+/* 
+    font-family: 'Black And White Picture', sans-serif;
+    font-family: 'Gugi', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
+*/
 
 /* 기본 리셋 */
 html,body{
@@ -101,34 +107,37 @@ body{
     height: 124px;
     background-color: #fff;
 }
+/* 로고박스 */
 #logo{
-    padding:10px;
-    text-align:center;
+    padding: 20px;
+    text-align: center;
 }
 #logo img{
     width: 100px;
 }
+/* GNB 메뉴 */
 .gnb{
     width: 574px;
-    margin: 0 auto; 
-    /* 크기를 가지는 블록박스 중앙정렬 -마영오 */
+    margin: 0 auto;
+    /* 크기를 가지는 블록박스 중앙정렬 - 마영오! */
     font-family: 'Nanum Gothic', sans-serif;
 }
-
 .gnb>ul{
     margin: 0;
     padding: 0;
     list-style: none;
+    /* 3無 */
 }
+/* 가상요소로 clear */
 .gnb>ul::after{
-    content:'';
+    content: '';
     display: block;
     clear: both;
 }
 .gnb>ul>li{
     float: left;
-
 }
+/* 메뉴 a링크 */
 .gnb>ul>li>a{
     color: #222;
     text-decoration: none;
@@ -136,7 +145,80 @@ body{
     line-height: 39px;
     font-size: 17px;
 }
-/* 가상요소로 clear */
+
+/* 서브메뉴 */
+.smenu{
+    position: absolute;
+    /* 젠틀앱솔루트! */
+    z-index: 1;
+    /* 가상요소 배경보다 위! */
+
+    height: 0;
+    overflow: hidden;
+    /* 서브메뉴 숨기기 */
+
+    /* 트랜지션:속시이지 */
+    transition: height .4s ease-out;
+
+}
+.smenu ol{
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    background-color: #fff;
+}
+.smenu a{
+    padding: 0 15px;
+    line-height: 30px;
+    font-size: 14px;
+
+    /* a요소 필수설정 - 글자색, 밑줄없앰 */
+    color: #222;
+    text-decoration: none;
+}
+
+/* 서브메뉴 100% 배경박스 가상요소로 만들기! */
+.gnb>ul>li::after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    /* 부모는? 보이는 화면(중간에 부모요소가 없다!) */
+    width: 100%;
+    height: 0;/* 처음에 안보임! */
+    background-color: #fff;
+    
+    /* 트랜지션:속시이지 */
+    transition: height .4s ease-out;
+}
+
+/* 상위메뉴 오버시 서브메뉴 보이기 */
+/* 
+    서브메뉴와 상위li의 가상요소로 만든 서브배경을 
+    같은 높이값으로 애니메이션하기 
+    + 하단빨간색 보더 적용하기
+*/
+/* 1번째 메뉴 */
+.gnb>ul>li:first-child:hover .smenu,
+.gnb>ul>li:first-child:hover::after{
+    height: 110px;
+    border-bottom: 2px solid red;
+}
+/* 3번째 메뉴 */
+.gnb>ul>li:nth-child(3):hover .smenu,
+.gnb>ul>li:nth-child(3):hover::after{
+    height: 140px;
+    border-bottom: 2px solid red;
+}
+/* 4번째 메뉴 */
+.gnb>ul>li:nth-child(4):hover .smenu,
+.gnb>ul>li:nth-child(4):hover::after{
+    height: 80px;
+    border-bottom: 2px solid red;
+}
+
+
+
 /*********** 2. 메인영역 ***************/
 .cont{
     height: 800px;
@@ -257,8 +339,6 @@ body{
 /* 캐릭터 설명 박스 */
 .cd{
     height: 0;
-    font-family: 'East Sea Dokdo', cursive;
-    
     /* .cat 오버시 250px로 높이값 변경! */
     overflow-y: scroll;
     /* y축 스크롤만 생겨서 넘치는 자식요소 보이기 */
@@ -285,22 +365,21 @@ body{
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
-    font-family: 'East Sea Dokdo', cursive;
+    font-family: 'Black And White Picture', sans-serif;
     font-size: min(2vw,30px);
-    font-weight: normal;
-    padding: 5px 10px 0;
+    font-weight: normal;    
+    padding: 1vw 1.7vw 0px;
     /* 패딩: 위 5px, 양쪽 10px, 아래0 */
-    padding: 12px 20px 0px;
-    white-space: nowrap
-     ;
-
+    white-space: nowrap;
+    /* 줄바꿈방지(기본값은 wrap) */
 }
 
 /* 캐릭터 설명 문단 */
 .cd p{
-    font-size: min(2vw,60px);
+    font-family: 'Gugi', cursive;
+    font-size: min(1.4vw,17px);
     line-height: 1.7;
-    padding: 10px;
+    padding: 1vw;
     text-align: justify;
     /* 양쪽정렬 */
 }
@@ -308,36 +387,40 @@ body{
 
 /*********** 3. 하단영역 ***************/
 .info{
-    height: 240px;
+    /* height: 240px; */
+    /* 높이값을 주지 않으면 auto가 되어 내용만큼 늘어남! */
     background-color: rgba(255, 255, 255, 0.7);
     font-family: 'Nanum Gothic', sans-serif;
-    padding: 10px;
+    padding: 15px;
 }
-/* 하단링크 */
+
 .blink{
     width: 804px;
-    margin: 0 auto; 
-    /* 크기를 가지는 블록박스 중앙정렬 -마영오 */
-/*     margin-top: 10px; */
+    margin: 0 auto;
+    /* 크기를 가지는 블록박스 중앙정렬 - 마영오! */
 }
+
+/* 하단링크 */
 .blink>ul{
     margin: 0;
     padding: 0;
     list-style: none;
+    /* 3無 */
 }
+/* 가상요소로 clear */
 .blink>ul::after{
-    content:'';
+    content: '';
     display: block;
     clear: both;
 }
 .blink>ul>li{
     float: left;
-
 }
+/* 메뉴 a링크 */
 .blink>ul>li>a{
     color: #222;
     text-decoration: none;
-    padding: 0 5px;
+    padding: 0 15px;
     line-height: 39px;
     font-size: 14px;
     font-weight: bold;
@@ -347,15 +430,18 @@ body{
     color: red;
     text-decoration: underline;
 }
-/* 주소 */
+
+/* 회사주소박스 */
 .addr{
     width: 804px;
     margin: 10px auto;
     border: 4px double #222;
     padding: 10px;
     box-sizing: border-box;
+    /* 크기유지-보더,패딩포함! */
     text-align: center;
     font-style: normal;
+    /* 기본 이탤릭해제! */
     font-size: 14px;
     line-height: 2;
 }
