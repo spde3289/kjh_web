@@ -14,6 +14,8 @@
 html,body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    /* 가로스크롤 없앰! - 모바일에서 넘치는 화면조절! */
 }
 h1,h2,h3,h4{
     margin: 0;
@@ -44,17 +46,16 @@ h1,h2,h3,h4{
 
 /* 공사중 박스표시 */
 /* 별표시(*)는 모든 요소를 선택함! */
-body *{
-    outline: 1px dashed orange;
-    /*  외곽선(아웃라인) 속성
+/* body *{
+    outline: 1px dashed orange;    
+} */
+/*  외곽선(아웃라인) 속성
         - 주변에 영향없이 테두리를 표시함
         - 임시표시하거나 포커스표시 등으로 사용
         - 박스모델에는 포함되지 않음!
         - 표기법은 border와 동일함
         - 두께는 박스요소 바깥쪽으로 표시됨
     outline: 두께 종류 색상; */
-}
-
 /* 
     기본적으로 block요소는
     width: auto 로 설정되어서
@@ -104,8 +105,12 @@ body{
 
 /*********** 1. 상단영역 ***************/
 .top{
+    position: relative;
+    /* z-index를 적용하기 위해 relative사용! */
+    z-index: 999;
     height: 124px;
     background-color: #fff;
+    border-bottom: 1px solid silver;
 }
 /* 로고박스 */
 #logo{
@@ -136,13 +141,22 @@ body{
 }
 .gnb>ul>li{
     float: left;
+    padding: 0 15px;
+    
+}
+/* 하단 막대 보더 오버시 생성하기 */
+.gnb>ul>li:hover>a{
+    border-bottom: 4px solid red;
 }
 /* 메뉴 a링크 */
 .gnb>ul>li>a{
+    display: block;
     color: #222;
     text-decoration: none;
-    padding: 0 15px;
-    line-height: 39px;
+    line-height: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    /* 오버시 생기는 보더가 내부에 포함(크기유지) */
     font-size: 17px;
 }
 
@@ -164,11 +178,14 @@ body{
 .smenu ol{
     margin: 0;
     padding: 10px 0;
+    margin-top: 1px;
+    /* 상단영역 최상위부모(.top) 하단보더를 보이게 하기위해
+    마진탑만 1px이동함! */
     list-style: none;
-    background-color: #fff;
+    /* background-color: #fff; */
 }
 .smenu a{
-    padding: 0 15px;
+    /* padding: 0 15px; */
     line-height: 30px;
     font-size: 14px;
 
@@ -183,8 +200,14 @@ body{
     display: block;
     position: absolute;
     left: 0;
-    /* 부모는? 보이는 화면(중간에 부모요소가 없다!) */
+    /* 부모는? .top(z-index때문에 relative를 줘서 이제 부모다! */
+    margin-top: 1px;
+    /* 최외곽박스(.top)의 하단보더가 1px보이게 하기위해
+    top대신 margin-top으로 이동하여 보이게한다! top은 젠틀앱솔루트
+    이기 때문에 설정하기가 어렵다!!! */
+
     width: 100%;
+    /* 앱솔루트의 크기가 %일 경우 부모자격요소를 기준한다! */
     height: 0;/* 처음에 안보임! */
     background-color: #fff;
     
@@ -202,25 +225,60 @@ body{
 .gnb>ul>li:first-child:hover .smenu,
 .gnb>ul>li:first-child:hover::after{
     height: 110px;
-    border-bottom: 2px solid red;
 }
 /* 3번째 메뉴 */
 .gnb>ul>li:nth-child(3):hover .smenu,
 .gnb>ul>li:nth-child(3):hover::after{
     height: 140px;
-    border-bottom: 2px solid red;
 }
 /* 4번째 메뉴 */
 .gnb>ul>li:nth-child(4):hover .smenu,
 .gnb>ul>li:nth-child(4):hover::after{
     height: 80px;
+}
+
+/* 오버시 하단보더처리 */
+.gnb>ul>li:first-child:hover::after,
+.gnb>ul>li:nth-child(3):hover::after,
+.gnb>ul>li:nth-child(4):hover::after{
     border-bottom: 2px solid red;
 }
 
+/* 모바일용 햄버거 버튼 */
+button.ham {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    /* 부모는? .top */
+    border: none;
+    background-color: transparent;
+    font-size: 37px;
+
+    z-index: 999;
+    /* .gnb보다 위! */
+
+    display: none;
+    /* 처음에 안보임! */
+}
+/* 햄버거 버튼에 가상요소로 글자넣기 */
+button.ham::before{
+    content: '≡';
+}
+/* 모바일 GNB 메뉴일 경우 닫기버튼으로 변경!
+.ham에 클래스 on추가! */
+button.ham.on::before{
+    content: '×';
+}
+/* 모바일 햄버거 메뉴 중 클래스가 on일때 fixed 포지션! */
+button.ham.on{
+    position: fixed;
+}
 
 
 /*********** 2. 메인영역 ***************/
 .cont{
+    position: relative;
+    /* 부모자격! */
     height: 800px;
     overflow: hidden;
     /* 자식요소 마진탑 포함셋팅! */
@@ -242,7 +300,6 @@ body{
         부모박스의 패딩탑으로 밀고 보더박스 처리해서
         크기가 커지지 않게 한다!
         ____________________________
-
         부모요소{
             padding-top: 몇px;
             box-sizing: border-box;
@@ -277,7 +334,6 @@ body{
     float속성
         -> left 값은 나는 왼쪽에 너는 오른쪽으로 올라와!
         -> right 값은 나는 오른쪽에 너는 왼쪽으로 올라와!
-
     [ 자식요소가 float된 경우 부모요소는 높이값이 0? ]
     -> 블록 자식요소 float으로 인해 부모요소가 높이값이 0인 경우
     다음과 같이 해결할 수 있다!
@@ -349,10 +405,8 @@ body{
         둥근모서리 방향별주기: 왼쪽위부터 시계방향
         왼위 오른위 오른아래 왼아래
         (하나의 값을 쓰면 4방향)
-
         ((w3schools 참고))
         https://www.w3schools.com/cssref/css3_pr_border-radius.asp
-
     */
 
     /* 트랜지션 : 속성 시간 이징 지연시간 */
@@ -384,6 +438,22 @@ body{
     /* 양쪽정렬 */
 }
 
+/* 오프닝 문구박스 */
+.optxt{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    /* 부모는? .cont */
+    opacity: 0;
+
+    /* 트랜지션: 속시이지 */
+    transition: opacity 2s ease-in-out 1s;
+}
+/* body에 오버시 오프닝문구 보이기 */
+body:hover .optxt{
+    opacity: 1;
+}
+
 
 /*********** 3. 하단영역 ***************/
 .info{
@@ -395,7 +465,7 @@ body{
 }
 
 .blink{
-    width: 804px;
+    max-width: 804px;
     margin: 0 auto;
     /* 크기를 가지는 블록박스 중앙정렬 - 마영오! */
 }
@@ -433,7 +503,7 @@ body{
 
 /* 회사주소박스 */
 .addr{
-    width: 804px;
+    max-width: 804px;
     margin: 10px auto;
     border: 4px double #222;
     padding: 10px;
