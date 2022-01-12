@@ -6,14 +6,13 @@ html,body{
     padding: 0;
 
 }
-body{
+ body{
     background: url(../images/bg.jpg) no-repeat fixed top/cover;
     overflow-x: hidden;
-}
-
-body *{
+} 
+/* body *{
     outline : 5px dashed lime;
-}
+} */
 
 /* 로봇머리 */
 #head{
@@ -96,6 +95,7 @@ body *{
     height: 300px;
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 300px;
     background: url(../images/metal01.jpg) no-repeat center/cover;
 }
 #neck{
@@ -146,5 +146,89 @@ body *{
     right: -80px;
     border-radius: 0 30% 30% 0;
 }
+/* tv */
+#tv{
+    position: absolute;
+    top: 55px;
+    left: 24px;
+    /* 부모는? body */
+    width: 200px;
+    height: 150px;
+    background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+}
+/* 스크린 */
+#screen{
+    position: absolute;
+    top: 17px;
+    left: 12px;
+    /* 부모는? #tv */
+    width: 140px;
+    height: 106px;
+    background-color: #222;
+    border-radius: 16px;
 
+    overflow: hidden;
+}
+/* 유튜브 아이프레임 */
+#screen iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 부모는 screen */
+    width: 100%;
+    height: 100%;
+}
+#dcbx{
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.411);
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    box-shadow: inset 0 0 60px cyan;
+    /* 박스그림자: (내부) x y 블러 (크기) 색 */
+}
+/* 로봇설명 제목 */
+#dcbx h2{
+    position: sticky;
+    top: 0;
+    font-size: 35px;
+    text-align: center;
+    color: lime;
+    background-color: rgba(255, 255, 255, 0.4);
 
+}
+/* 설명출ㅊ처 */
+#dcbx small{
+    display: block;
+    /* 텍스트 중앙정렬 */
+    text-align: center;
+    color: #ff0;
+}
+/* 설명문단 */
+#dcbx p{
+    font-size: 15px;
+    line-height: 1.5;
+    /* 줄간격:배수/단위 등 */
+    letter-spacing: 1px;
+    /* 자간 */
+    word-spacing: 2px;
+    /* 단어간격 */
+
+    /* 가독성 */
+    /* e다단표시 */
+    column-count: 3;
+    /* 다중열 구분선 값은 보더와 같다 (두께 종류 색상) */
+    column-rule: 5px dotted lime;
+    /* 다중열 사이 간격  */
+    column-gap: 50px;
+    /* 양쪽정렬 - 끝라인을 맞춰줌 */
+    text-align: justify;
+    /* 단어단위를 한글자 씩으로 깨준다 양쪽 정렬시 사용하면 보기 좋다 */
+    word-break: break-all;
+    /* 첫줄 들여쓰기(-값 사용시 내여쓰기 가능) */
+    text-indent: 20px;
+}
