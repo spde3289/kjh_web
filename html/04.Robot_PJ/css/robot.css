@@ -1,6 +1,11 @@
 @charset "utf-8";
 
-
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+/* font-family: 'Neonderthaw', cursive; */
+html{
+    scroll-behavior: smooth;
+    /* 내부 아이디 위치이동시 스크롤 애니메이션을 부드럽게 처리함 */
+}
 html,body{
     margin: 0;
     padding: 0;
@@ -13,10 +18,150 @@ html,body{
 /* body *{
     outline : 5px dashed lime;
 } */
+/* 로봇페이지로고 */
+h1#logo{
+    position: fixed;
+    /* 사라지지않은 포지션 화면 따라다님 */
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    z-index: 1;
+    transform: scale(2);
+
+    /* 보이는 화면 기준 */
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin: 0;
+    /* h1요소의 기본값 마진 없앰! */
+    text-align: center;
+    line-height: 200px;
+
+    color: #fff;
+    font-family: "Vladimir Script";
+    font-size: 60px;
+    text-shadow: 2px 2px 2px #000;
+    box-shadow: 0 0 20px 5px pink,
+                inset 0 0 20px #000;
+    /* 박스그림자: 내부 x y blur spread 색 */
+    /* 박스그림자나 글자그림자는 콤마로 여러개 셋팅 가능 */
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat center 10px/160px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: logoAni 2s ease-in-out 2s 3 alternate forwards;
+}
+
+
+/* logoAni 키프레임 */
+
+/******************************************************* 
+    [ CSS 로 애니메이션 하기 ]
+    - 시간에 따라 CSS설정을 변경하여 애니메이션 하도록
+    키프레임을 설정하고 이것을 호출함으로 의도된 연출을
+    구현하는 것이 CSS 애니메이션이다!
+    [ 애니메이션 키프레임 만들기 ]
+    - 키프레임이란? 애니메이션 장면을 넣는 코드
+    1. 두장면 키프레임
+    @keyframes 키프레임이름{
+        from{시작CSS설정}
+        to{끝나는CSS설정}
+    }
+    또는
+    @keyframes 키프레임이름{
+        0%{시작CSS설정}
+        100%{끝나는CSS설정}
+    }
+    -> 만약 from설정과 초기설정이 같다면 from을 생략할 수 있다!
+    2. 여러장면 키프레임
+    @keyframes 키프레임이름{
+        0%{CSS설정}
+        10%{CSS설정}
+        20%{CSS설정}
+        ...
+        90%{CSS설정}
+        100%{CSS설정}
+    }
+    (1) 장면에 대한 시간 계산은 어떻게 하나?
+    -> 전체시간 * 설정된%/100
+    (2) 전체시간 설정은 호출시에 셋팅함!
+    [ 설정된 키프레임 호출하는 방법 ]
+    animation: 이시이지반방마
+    (이름 시간 이징 지연 반복 방향 마지막상태)
+    1. 이름(animation-name) : 키프레임 이름
+    2. 시간(animation-duration) : 애니메이션 동작시간
+        -> 초단위(s)
+    3. 이징(animation-timing-function) : easing가속도
+    4. 지연(animation-delay) : 애니메이션 시작지연시간(s)
+    5. 반복(animation-iteration-count) : 애니메이션 반복
+        - 기본값 1 , 숫자를 쓰면 숫자만큼 반복함!
+        - 영원히는 infinite(인피니트)
+    6. 방향(animation-direction) : 시작 -> 끝
+        - 반복시 시작과 반대경로로 애니를 만들어줌
+        -> alternate : 시작->끝, 끝->시작
+    7. 마지막상태(animation-fill-mode) : 
+        - 애니메이션이 끝났을때 처음으로 돌아가는게 기본인데
+        -> forwards (앞쪽에... 즉, 애니끝장면으로 마무리!)
+*******************************************************/
+
+    
+
+
+@keyframes logoAni {
+    to{
+        top: 50px;
+        left: 50px;
+        transform: scale(1);
+    }
+}
+
+
+.link{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    /* 부모는 보이는 화면 */
+
+
+}
+.link a{
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'Neonderthaw', cursive;
+    font-size: 5vw;
+}
+.link a:hover{
+    color: blueviolet;
+    text-decoration: overline;
+}
+/* 위로이동버튼 */
+.btnTop{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ccc;
+}
+.btnTop:hover{
+    background-color: blueviolet;
+    color: red;
+}
+
+
 
 /* 로봇머리 */
 #head{
     position: relative;
+    left: 100%;
     width: 250px;
     height: 250px;
     background: url(../images/metal01.jpg) no-repeat center/cover;
@@ -93,6 +238,7 @@ html,body{
     /* 부모자격 */
     width: 250px;
     height: 300px;
+    left: -100%;
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 300px;
@@ -232,3 +378,11 @@ html,body{
     /* 첫줄 들여쓰기(-값 사용시 내여쓰기 가능) */
     text-indent: 20px;
 }
+
+/* 가상요소로 첫글자 디자인 변경하기 */
+#dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: lightcoral;
+}
+
