@@ -5,17 +5,16 @@
 @import url(reset.css);
 @import url(core.css);
 
-body {
+body{
     background-color: #000;
 }
 
-body * {
+/* body * {
     outline: 1px dashed #ccc;
-}
-
+} */
 
 /* 레이아웃 공통 class */
-.part {
+.part{
     max-width: 1200px;
     /* 최대 1200px, 이하일땐 auto */
     margin: 0 auto;
@@ -23,14 +22,18 @@ body * {
 }
 
 
+
+
 /*************** 1. 상단영역 ***************/
-#top {
+#top{
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
+    position: relative;
+    z-index: 9999;
 }
 
 /* 1-1. 페이지타이틀 */
-h1.tit {
+h1.tit{
     color: aquamarine;
     font-family: 'Jua', sans-serif;
     font-size: 40px;
@@ -39,6 +42,169 @@ h1.tit {
 
     /* 그림자를 이용한 Glow효과 */
     text-shadow: 0 0 4px aquamarine;
+}
+
+/* 1-2전체메뉴 gnb */
+.gnb{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    /* 나의 부모? #top */
+}
+
+
+.glist{
+    display: flex;
+    font-family: 'Jua', sans-serif;
+}
+
+.glist>li{ /* 상위메뉴 li */
+    position: relative;
+    padding: 0 10px;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+
+
+.smenu{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    background: url(../images/bg_smenu.png) no-repeat center/cover;
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff;
+    display: none;
+}
+
+/* 상위메뉴 li 에 오버시에 .smenu */
+.glist>li:hover .smenu{
+    display: block;
+}
+/* 가상요소로 삼각형만들기 */
+.smenu::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* 삼각형 민들기 */
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #353535;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+/* 서브메뉴 ol */
+.smenu ol{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.smenu li{
+    font-size: 16px;
+    line-height: 2;
+}
+
+.bdt{
+    border-top: 1px solid #ccc;
+}
+
+.smenu a:hover {
+    color: red;
+}
+/* 서브메뉴 a에 오버시 */
+.smenu a{
+    display: block;
+}
+
+.glist>li:nth-child(1) .smenu li a:hover:after{
+    content: '😆';
+    float: right;
+    font-size: 16px;
+}
+.glist>li:nth-child(2) .smenu li a:hover::after{
+    content: '😁';
+    float: right;
+    font-size: 16px;
+}
+.glist>li:nth-child(3) .smenu li a:hover::after{
+    content: '😋';
+    float: right;
+    font-size: 16px;
+}
+.glist>li:nth-child(4) .smenu li a:hover::after{
+    content: '🤩';
+    float: right;
+    font-size: 16px;
+}
+
+/* 영사기박스 */
+#cam{
+    position: absolute;
+    bottom: -14px;
+    right: -47px;
+}
+
+#cam img {
+    position: relative;
+    z-index: 1;
+    width: 50px;
+
+    /* 영사기 회전 */
+    transform: rotate(25deg);
+    /* 양수값은 시계방향 */
+    /* 트랜지션 속시이지 */
+    transition: .5s ease-out .3s;
+}
+
+/* gnb오버시 영사기 쏘기 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    transition-delay: 0s;
+}
+
+.bim {
+    position: absolute;
+    top: -16px;
+    right: 4px;
+    width: 0px;
+    height: 70px;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+
+    transition: width .3s linear;
+}
+.gnb:hover .bim{
+    width: 200px;
+    transition-delay: .5s;
+}
+
+
+
+/* 2-1.스크린 박스 */
+#screen{
+    position: absolute;
+    top: 17.2%;
+    left: 21.4%;
+    /* 부모는? #cont.rbx */
+    width: 58.5%;
+    height: 50.5%;
+    background-color: #000;
+}
+
+/* 스크린 아이프레임 */
+#screen iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    /* 아이프레임 기본보더 없앰! */
 }
 
 /*************** 2. 메인영역 ***************/
@@ -62,27 +228,8 @@ h1.tit {
     */
 }
 
-/* 2-1.스크린 박스 */
-#screen {
-    position: absolute;
-    top: 17.2%;
-    left: 21.4%;
-    /* 부모는? #cont.rbx */
-    width: 58.5%;
-    height: 50.5%;
-    background-color: #000;
-}
-
-/* 스크린 아이프레임 */
-#screen iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    /* 아이프레임 기본보더 없앰! */
-}
-
 /* 2-2.예고편 선택메뉴 */
-.mlist {
+.mlist{
     position: absolute;
     bottom: 5%;
     left: 50%;
@@ -91,15 +238,13 @@ h1.tit {
     /* X축방향으로 자기크기의 절반 
     왼쪽으로이동하기-> 가로중앙이동! */
     width: 61%;
-
-
 }
 
 .mlist ul {
     display: flex;
 }
 
-.mlist ul>li {
+.mlist ul>li{
     position: relative;
     /* 부모자격! */
     flex: 1;
@@ -128,7 +273,7 @@ h1.tit {
 
     /* 글자셋팅 */
     font-family: 'Cute Font', cursive;
-    font-size: min(1.3vw, 14px);
+    font-size: min(1.3vw,14px);
     /* min(유동사이즈,고정사이즈) 메서드 
     1.3vw와 14px중 작은 사이즈선택! */
     color: #fff;
@@ -140,15 +285,15 @@ h1.tit {
 }
 
 /* 부모li에 오버시 설명박스 올라오기 */
-.mlist ul>li:hover .movtxt {
+.mlist ul>li:hover .movtxt{
     top: 0;
 }
 
 
 /* 첫번째 li는 영화제목 */
-.movtxt li:first-child {
+.movtxt li:first-child{
     color: aqua;
-    font-size: min(1.4vw, 17px);
+    font-size: min(1.4vw,17px);
     /* min(유동사이즈,고정사이즈) 메서드 
     1.4vw와 17px중 작은 사이즈선택! */
     letter-spacing: -1px;
@@ -156,27 +301,62 @@ h1.tit {
 }
 
 /*************** 3. 하단영역 ***************/
-#info {
+#info{
     height: 100px;
+    position: relative;
 }
 
-/* 3-1 회사정보 */
+/* 회사정보 */
 #info address {
     color: #fff;
     font-style: normal;
     font-family: 'Cute Font', cursive;
     font-size: 18px;
     line-height: 20px;
+
+    /* 안쪽여백 */
     padding-top: 20px;
     padding-left: 20px;
-    
+
 }
-
-
-
-/* 하단로고이미지 */
+/* 하단로고 이미지 */
 #info img{
     float: left;
+    /* 이미지는 왼쪽, 글자를 오른쪽에 흐르게 */
     margin-right: 20px;
-    
+}
+
+/* sns박스 */
+.sns{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 부모는?  */
+    display: flex;
+}
+
+.sns li{
+    width: 34px;
+    height: 34px;
+    background: url(../images/sprites_logo.png) no-repeat ;
+    filter: grayscale(100%);
+    /* 흑백처리 */
+}
+.sns li:hover{
+    filter: grayscale(0%);
+}
+.sns li:first-child{
+    background-position: -510px -429px;
+}
+.sns li:nth-child(2){
+    background-position: -551px -429px;
+}
+.sns li:last-child{
+    background-position: -593px -429px;
+}
+/* sns a링크 확장 */
+.sns a{
+    display: block;
+    width: 100%;
+    height: 100%;
 }
