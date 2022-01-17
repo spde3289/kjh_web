@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+/*  CGV PJ 공통 핵심 css - reset.css */
+/* 웹폰트, 공용클레스 */
+
+/* 마진패딩 없애기 */
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dt, dd, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* a 요소 리셋 */
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/* ul, ol 리셋 */
+ul, ol {
+    list-style: none;
+}
+
+/* h요소 글자크기 리셋 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    /* html의 기본글자크기(16px)과 일치 초기화 */
+}
