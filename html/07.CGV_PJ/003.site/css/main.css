@@ -5,7 +5,7 @@
 @import url(reset.css);
 @import url(core.css);
 
-body{
+body {
     background-color: #000;
 }
 
@@ -15,7 +15,7 @@ body * {
 
 
 /* 레이아웃 공통 class */
-.part{
+.part {
     max-width: 1200px;
     /* 최대 1200px, 이하일땐 auto */
     margin: 0 auto;
@@ -24,12 +24,13 @@ body * {
 
 
 /*************** 1. 상단영역 ***************/
-#top{
+#top {
     height: 80px;
     background: url(../images/curtain.jpg) repeat-x;
 }
+
 /* 1-1. 페이지타이틀 */
-h1.tit{
+h1.tit {
     color: aquamarine;
     font-family: 'Jua', sans-serif;
     font-size: 40px;
@@ -41,7 +42,7 @@ h1.tit{
 }
 
 /*************** 2. 메인영역 ***************/
-#cont{
+#cont {
     /* height: 788px; */
     /* 높이값을 주지않고 비율유지 가상요소로 생성함! */
     background: url(../images/bg.jpg) no-repeat;
@@ -49,8 +50,9 @@ h1.tit{
     /* 배경이미지 크기도 가로크기에 맞춰서 세로는 자동
     -> 그래야 비율이 맞게됨! */
 }
+
 /* 비율만들기 */
-#cont.rbx::before{
+#cont.rbx::before {
     padding-top: 65.66%;
     /* 
         비율계산하기:
@@ -61,7 +63,7 @@ h1.tit{
 }
 
 /* 2-1.스크린 박스 */
-#screen{
+#screen {
     position: absolute;
     top: 17.2%;
     left: 21.4%;
@@ -70,8 +72,9 @@ h1.tit{
     height: 50.5%;
     background-color: #000;
 }
+
 /* 스크린 아이프레임 */
-#screen iframe{
+#screen iframe {
     width: 100%;
     height: 100%;
     border: none;
@@ -79,7 +82,7 @@ h1.tit{
 }
 
 /* 2-2.예고편 선택메뉴 */
-.mlist{
+.mlist {
     position: absolute;
     bottom: 5%;
     left: 50%;
@@ -91,10 +94,12 @@ h1.tit{
 
 
 }
+
 .mlist ul {
     display: flex;
 }
-.mlist ul>li{
+
+.mlist ul>li {
     position: relative;
     /* 부모자격! */
     flex: 1;
@@ -102,13 +107,15 @@ h1.tit{
     overflow: hidden;
     /* 넘치는 자식요소 숨기기 */
 }
+
 .mlist img {
     width: 100%;
     vertical-align: bottom;
     /* 이미지 박스하단 공백 없애기! */
 }
+
 /* 영화정보박스 */
-.movtxt{
+.movtxt {
     position: absolute;
     top: 100%;
     /* 아래쪽 나가있음! 오버시 0으로 올라옴! */
@@ -121,7 +128,7 @@ h1.tit{
 
     /* 글자셋팅 */
     font-family: 'Cute Font', cursive;
-    font-size: min(1.3vw,14px);
+    font-size: min(1.3vw, 14px);
     /* min(유동사이즈,고정사이즈) 메서드 
     1.3vw와 14px중 작은 사이즈선택! */
     color: #fff;
@@ -133,15 +140,15 @@ h1.tit{
 }
 
 /* 부모li에 오버시 설명박스 올라오기 */
-.mlist ul>li:hover .movtxt{
+.mlist ul>li:hover .movtxt {
     top: 0;
 }
 
 
 /* 첫번째 li는 영화제목 */
-.movtxt li:first-child{
+.movtxt li:first-child {
     color: aqua;
-    font-size: min(1.4vw,17px);
+    font-size: min(1.4vw, 17px);
     /* min(유동사이즈,고정사이즈) 메서드 
     1.4vw와 17px중 작은 사이즈선택! */
     letter-spacing: -1px;
@@ -149,6 +156,27 @@ h1.tit{
 }
 
 /*************** 3. 하단영역 ***************/
-#info{
+#info {
     height: 100px;
+}
+
+/* 3-1 회사정보 */
+#info address {
+    color: #fff;
+    font-style: normal;
+    font-family: 'Cute Font', cursive;
+    font-size: 18px;
+    line-height: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    
+}
+
+
+
+/* 하단로고이미지 */
+#info img{
+    float: left;
+    margin-right: 20px;
+    
 }
