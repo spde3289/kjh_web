@@ -1,126 +1,137 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>나의 프로젝트!</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Monoton&family=Single+Day&display=swap');
-            html,body,h1,h2{
-                margin: 0;
-                padding: 0;
-            }
-            body{
-                background: url(./imgs/worksbg.jpg) no-repeat fixed center/cover;
-                overflow: hidden;
-                /* 첫번째 자식블록요소 마진탑포함 */
-                font-family: 'Gugi', cursive;
-            }
-            /* 초기화 */
-            ul{
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
-            a{
-                color: #222;
-                text-decoration: none;
-            }
-            .wrap{
-                w1100
-                max-width: 1200px;
-                background-color: rgba(255, 255, 255, 0.7);
-                margin: 0 auto;
-                margin-top: 50px;
-                border-radius: 15px;
-                padding: 15px;
-            }
-            .tit{
-                text-align: center;
-            }
-            /* 프로젝트 박스 */
-            .pbx{
-                display: flex;
-                /* 자식 블럭 요소를 옆으로 흐르게함 */
 
-            }
-            .pbx>div{
-                position: relative;
-                flex: 1;
-                /* 부모가 flex인 자식을 등분할 시 설정값은1 */
-                padding: 10px;
+<head>
+    <title>나의 프로젝트!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Monoton&family=Single+Day&display=swap');
 
-            }
-            /* 미디어쿼리 - 1000px이하 */
-            @media screen and (max-width:1000px) {
-                .pbx{
-                    flex-direction: over
-                    ;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div class="wrap">
-            <h1 class="tit">
-                <img src="imgs/mylogo_14.png" alt="아카이브로고">
-            </h1>
+        html,
+        body,
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
 
-            <div class="pbx">
-                <!-- 공통프로젝트 -->
-                <div>
-                    <h2>공통프로젝트</h2>
-                    <ul>
-                        <li>
-                            <a href="HTML/01.Info_PJ/info.html" target="_blank">
-                                기본전달사항
-                            </a>
-                        </li>
-                        <li>
-                            <a href="999.portfolios/" target="_blank">
-                                포폴관리페이지
-                            </a>
-                        </li>
-                        <li>
-                            <a href="HTML/03.DKB_PJ/" target="_blank">
-                                도깨비 PJ
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- 개인프로젝트 -->
-                <div>
-                    <h2>공통프로젝트</h2>
-                    <ul>
-                        <li>
-                            <a href="HTML/01.Info_PJ/info.html" target="_blank">
-                                기본전달사항
-                            </a>
-                        </li>
-                        <li>
-                            <a href="999.portfolios/" target="_blank">
-                                포폴관리페이지
-                            </a>
-                        </li>
-                        <li>
-                            <a href="HTML/03.DKB_PJ/" target="_blank">
-                                도깨비 PJ
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        body {
+            background: url(./imgs/worksbg.jpg) no-repeat fixed center/cover;
+            overflow: hidden;
+            /* 첫번째 자식블록요소 마진탑포함 */
+            font-family: 'Gugi', cursive;
+        }
+
+        /* 초기화 */
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        .wrap {
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 15px;
+            padding: 15px;
+        }
+
+        .tit {
+            text-align: center;
+        }
+
+        /* 프로젝트 박스 */
+        .pbx {
+            display: flex;
+            /* 자식 블럭 요소를 옆으로 흐르게함 */
+
+        }
+
+        .pbx>div {
+            position: relative;
+            flex: 1;
+            /* 부모가 flex인 자식을 등분할 시 설정값은1 */
+            padding: 10px;
+
+        }
+
+        /* 미디어쿼리 - 1000px이하 */
+        @media screen and (max-width:1000px) {
+            .pbx {
+                flex-direction: over;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1 class="tit">
+            <img src="imgs/mylogo_14.png" alt="아카이브로고">
+        </h1>
+
+        <div class="pbx">
+            <!-- 공통프로젝트 -->
+            <div>
+                <h2>공통프로젝트</h2>
+                <ul>
+                    <li>
+                        <a href="HTML/01.Info_PJ/info.html" target="_blank">
+                            기본전달사항
+                        </a>
+                    </li>
+                    <li>
+                        <a href="999.portfolios/" target="_blank">
+                            포폴관리페이지
+                        </a>
+                    </li>
+                    <li>
+                        <a href="HTML/03.DKB_PJ/" target="_blank">
+                            도깨비 PJ
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 개인프로젝트 -->
+            <div>
+                <h2>공통프로젝트</h2>
+                <ul>
+                    <li>
+                        <a href="HTML/01.Info_PJ/info.html" target="_blank">
+                            기본전달사항
+                        </a>
+                    </li>
+                    <li>
+                        <a href="999.portfolios/" target="_blank">
+                            포폴관리페이지
+                        </a>
+                    </li>
+                    <li>
+                        <a href="HTML/03.DKB_PJ/" target="_blank">
+                            도깨비 PJ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="HTML/07.CGV_PJ/003.site/intro.html" target="_blank">
+                            cgv PJ
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
+    <h1>공통 프로젝트</h1>
+    <ul>
 
+    </ul>
+</body>
 
-
-
-
-
-
-        <h1>공통 프로젝트</h1>
-        <ul>
-            
-        </ul>
-    </body>
 </html>
