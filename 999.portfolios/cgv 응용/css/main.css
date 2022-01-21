@@ -8,6 +8,7 @@ body{
     background-color: #000;
 }
 
+
 /* body * {
     outline: 1px dashed #ccc;
 }
@@ -180,7 +181,6 @@ h1 img{
 }
 
 
-
 .mainimg{
     position: absolute;
     width: 100%;
@@ -193,7 +193,7 @@ h1 img{
     height: 100%;
 }
 
-.subimg{
+.subimg {
     position: absolute;
     width: 100%;
     bottom: 5%;
@@ -210,7 +210,7 @@ h1 img{
 .subimg li{
     width: 23%;
 }
-.subimg img{
+.subimg img,video{
     width: 100%;
     border-radius: 5px;
 }
@@ -219,6 +219,11 @@ h1 img{
     transition:  .5s ease-out .5s;
     transform: scale(1.5);
 }
+
+
+
+
+
 
 /* 하단영역 */
 
