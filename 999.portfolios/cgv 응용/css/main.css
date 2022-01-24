@@ -25,7 +25,6 @@ body{
 
 #top{
     height: 80px;
-    border-bottom : 1px solid #fff;
 }
 
 h1 img{
@@ -95,7 +94,6 @@ h1 img{
     padding: 10px;
 }
 
-
 .smenu li{
     font-size: 16px;
     line-height: 2;
@@ -103,8 +101,29 @@ h1 img{
 
 .smenu li:hover{
     border-bottom: 1px solid #ccc;
-    
 }
+
+.smenu li:first-child{
+    position: absolute;
+    top: 0;
+}
+.smenu li:nth-child(2){
+    position: absolute;
+    top: 15px;
+}
+.smenu li:nth-child(3){
+    position: absolute;
+    top: 30px;
+}
+.smenu li:nth-child(4){
+    position: absolute;
+    top: 45px;
+}
+.smenu li:nth-child(5){
+    position: absolute;
+    top: 60px;
+}
+
 
 /* 영사기 박스 */
 #cam{
@@ -177,7 +196,6 @@ h1 img{
 #cont{
     position: relative;
     padding-top: 70.33%;
-    border-bottom: 1px solid #ccc;
 }
 
 
