@@ -99,30 +99,18 @@ h1 img{
     line-height: 2;
 }
 
-.smenu li:hover{
+
+
+.smenu div{
+    opacity: 0;
     border-bottom: 1px solid #ccc;
+
 }
 
-.smenu li:first-child{
-    position: absolute;
-    top: 0;
+.smenu li:hover div{
+    opacity: 1;
 }
-.smenu li:nth-child(2){
-    position: absolute;
-    top: 15px;
-}
-.smenu li:nth-child(3){
-    position: absolute;
-    top: 30px;
-}
-.smenu li:nth-child(4){
-    position: absolute;
-    top: 45px;
-}
-.smenu li:nth-child(5){
-    position: absolute;
-    top: 60px;
-}
+
 
 
 /* 영사기 박스 */
