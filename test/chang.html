@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function chang(u) {
+            console.log("성공!");
+            var scene = document.getElementById("js");
+            if("성공!"==="포스터") src = "/imgs/worksbg.jpg";
+            js.src = isrc;
+            js.setAttribute("src",isrc);
+        }
+
+    </script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100%;
+        }
+
+        img {
+            margin: 100px;
+            border: 1px solid #000;
+        }
+
+        img:hover {
+            transform: scale(1.5);
+            transition: .5s ease-out .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="js"  src="/imgs/mylogo_14.png" alt="" onmouseover="chang(this)"> 
+</body>
+
+</html>
