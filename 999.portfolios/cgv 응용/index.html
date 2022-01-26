@@ -10,8 +10,28 @@
 </head>
 <script>
     function img(U){
-        var img = "안녕하세요";
-        console.log(img);
+        var chgImg = document.querySelector(".subimg img");
+        console.log(chgImg);
+
+        var isrc;
+
+        switch(U){
+            case "a" :
+            isrc = "imges/img2.webp";
+        }
+
+        chgImg.setAttribute("src",isrc);
+    }
+    function offimg(U){
+        var reImg = document.querySelector(".subimg img");
+        console.log(reImg);
+
+        var msrc
+        switch(U){
+            case "a" :
+                msrc = "imges/img1.webp";
+        }
+        reImg.setAttribute("src",msrc);
     }
 </script>
 
@@ -97,7 +117,7 @@
             <ul>
                 <li>
                     <a href="#">
-                        <img src="imges/img1.webp" alt="이태원클라쓰" onmouseover="img('a')">
+                        <img src="imges/img1.webp" alt="이태원클라쓰" onmouseover="img('a')" onmouseout="offimg('a')">
 
                     </a>
                 </li>
