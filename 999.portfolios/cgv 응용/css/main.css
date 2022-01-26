@@ -227,7 +227,24 @@ h1 img{
 }
 
 
+.subimg li{
+    position: relative;
+}
 
+.subimg div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.subimg div video{
+    transform: scale(1.5);
+    transition: .5s ease-out .5s;
+}
 
 
 

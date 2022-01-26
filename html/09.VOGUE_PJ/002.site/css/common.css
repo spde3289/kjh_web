@@ -152,8 +152,8 @@
 .gnb{
     /* 글자설정 */
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 16px;
-    line-height: 40px;
+    font-size: 14px;
+    line-height: 50px;
     padding: 0 30px;
     margin-top: 11px;
 }
@@ -215,6 +215,8 @@
 #top.on .gnb{
     margin-top: 0;
 }
+
+
 
 
 /*************** 2. 하단영역 ***************/
