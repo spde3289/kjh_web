@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>변수 var / let, 상수 const</title>
+  <script>
+    /*********************************** 
+      변수는 바.렛.콘스트!!
+
+      [ var ] : 함수영역변수
+
+      1. 함수영역에서 사용할때만 지역변수, 바깥쪽은 전역변수다!
+      2. 전역변수와 같은 이름의 변수를 함수에서 값을 주면 덮어쓰기가 된다
+      3. 함수영역에서 전역변수와 같은 이름의 변수를 선언하면 전역병수와 다른 지역변수로 관리된다!
+      (이렇게 하면 코딩이 혼란스러워진다!!!)
+      ___________________________________
+
+      [ let ] : 블록영역변수 (중괄호는 모두 블록임!)
+
+      1. var 전역변수를 같은 이름의 let 블록변수로 선언하면 별도로 관리된다!(별개의 변수임)
+
+      2. let 전역변수도 같은 이름의 let 블록 변수로 사용할 수 있다!
+      
+      /// let, const 테스트 
+    ***********************************/
+
+
+    /////////// var 테스트 ////////
+    // js 에서 중괄호란{} 코드를 묶어주는 영역 
+    function callMe(){
+      var korea = '한국';
+      console.log("함수내 korea:",korea);
+    }
+    
+    var korea = '미국';
+    callMe();
+    // 함수 밖에서 korea변수 찍기
+    console.log("함수밖:korea",korea);
+    
+    if(true){
+      var who ="누구?";
+      console.log("if문안 who:",who);
+    }
+
+    console.log("if문안 who:",who);
+
+    // for문 중괄호 var 
+    for(var i=3;i>0;i--){
+      console.log("for문안 1:",i);
+    }
+
+    console.log("for문안 1:",i);
+    ////////////////////////////////////////
+    var seoul= "서울";
+    var jeju="제주도";
+    let toktok = "카톡";
+    let sport = "축구";
+    {
+      // 블록내부에서 전역변수 찍기 
+      console.log("전역변수는 블록영역에서 찍기! 앞");
+      console.log("seoul",seoul);
+      console.log("jeju",jeju);
+      console.log("toktok",toktok);
+      console.log("sport",sport);
+      
+      //  재선언하기
+      var seoul = "강남구";
+
+
+      // 블록내부에서 전역변수 찍기
+      console.log("전역변수는 블록영역에서 찍기! 뒤");
+      console.log("seoul",seoul);
+      console.log("jeju",jeju);
+      console.log("toktok",toktok);
+      console.log("sport",sport);
+      
+    }
+    // 전역영역에서 전역변수 찍기
+    console.log("전역변수는 전역영역에서 찍기!");
+    console.log("seoul",seoul);
+    console.log("jeju",jeju);
+    console.log("toktok",toktok);
+    console.log("sport",sport);
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
