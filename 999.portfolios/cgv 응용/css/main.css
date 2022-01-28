@@ -241,7 +241,7 @@ h1 img{
     object-fit: cover;
     
 }
-.subimg div video{
+.subimg div {
     transform: scale(1.5);
     transition: .5s ease-out .5s;
 }
