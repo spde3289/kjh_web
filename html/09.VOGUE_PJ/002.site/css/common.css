@@ -152,8 +152,8 @@
 .gnb{
     /* 글자설정 */
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 14px;
-    line-height: 50px;
+    font-size: 16px;
+    line-height: 40px;
     padding: 0 30px;
     margin-top: 11px;
 }
@@ -191,6 +191,14 @@
 /* 상단변경은 모두 #top최상위 박스에 class="on"이 된경우
 적용되도록 한다!!! -> #top.on 하위변경 */
 
+/* 전체 상단영역 고정하기 */
+#top.on{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 /* 로고박스이동 */
 #top.on .logo{
     position: absolute;
@@ -208,15 +216,25 @@
 }
 /* 속박스에 최소높이 없애기 */
 #top.on .top{
-    min-height: auto;
+    min-height: 50px;
 }
 
 /* GNB 마진탑 없애기(부모박스 바깥쪽을 밀기때문!) */
 #top.on .gnb{
     margin-top: 0;
+    font-size: 14px;
+    line-height: 37px;
+    padding: 5px 30px 5px 121px;
+    /* 기존양쪽패딩 30px 중 왼쪽만 로고만큼 더 밀기 */
 }
-
-
+/* 메뉴글자색 변경 */
+#top.on .gnb a {
+    color: #333;
+}
+/* GNB li 리스트 */
+#top.on .gnb li {
+    padding-right: 35px;
+}
 
 
 /*************** 2. 하단영역 ***************/

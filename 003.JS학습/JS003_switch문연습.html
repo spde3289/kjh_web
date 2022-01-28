@@ -61,13 +61,15 @@
         function chgImg(U) {
             // U - this키워드로 보낸 버튼요소자신을 받는 전달변수
             // 버튼텍스트
+            var txt = U.innerText;
             // U.innerText는 버튼글자를 읽어옴!
 
             // 1. 함수호출확인
+            console.log("나야나!", txt);
 
             // 2. 변경대상: #scene
             var scene = document.getElementById("scene");
-            console.log(scene);
+
             // 3. 변경내용: 대상img요소의 src속성값 변경
             // 클릭된 버튼명이 다르므로 각각 이미지를 다르게함!
 
@@ -75,20 +77,19 @@
             var isrc;
             // 버튼별분기
             // switch case문
-            switch (U) {
-                case "a":
+            switch (txt) {
+                case "포스터":
                     isrc = "./images/ala1.jpg";
                     break;
-                case "b":
+                case "장면1":
                     isrc = "./images/ala4.jpg";
                     break;
-                case "c":
+                case "장면2":
                     isrc = "./images/ala3.jpg";
                     break;
-                case "d":
+                case "장면3":
                     isrc = "./images/ala2.jpg";
                     break;
-            
             } ////// switch case /////
 
 
@@ -112,15 +113,15 @@
 
     <!-- 스틸컷장면박스 -->
     <div class="photo">
-        <img id="scene" src="./images/ala1.jpg" alt="알라딘스틸컷" onmouseover="chgImg('a')">
+        <img id="scene" src="./images/ala1.jpg" alt="알라딘스틸컷">
     </div>
 
     <!-- 선택버튼박스 -->
     <div class="btnbx">
-        <button class="btns" onclick="chgImg('a')">포스터</button>
-        <button class="btns" onclick="chgImg('b')">장면1</button>
-        <button class="btns" onclick="chgImg('c')">장면2</button>
-        <button class="btns" onclick="chgImg('d')">장면3</button>
+        <button class="btns" onclick="chgImg(this)">포스터</button>
+        <button class="btns" onclick="chgImg(this)">장면1</button>
+        <button class="btns" onclick="chgImg(this)">장면2</button>
+        <button class="btns" onclick="chgImg(this)">장면3</button>
     </div>
     <!-- 
         함수호출시 this란?
