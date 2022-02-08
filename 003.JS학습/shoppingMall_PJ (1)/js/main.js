@@ -30,6 +30,8 @@ window.addEventListener("load", () => {
   let abtn = document.querySelectorAll(".abtn");
   // 변경 대상: #slide
   let slide = document.querySelector("#slide");
+  // 추가대상: .indic li
+  let indic = document.querySelectorAll(".indic li");
 
   // 오른쪽버튼 클릭시
   abtn[1].onclick = () => goSlide(1);
@@ -78,6 +80,10 @@ window.addEventListener("load", () => {
       // 이동하기 : 슬라이드의 left값을 변경함
       slide.style.left = (-100*snum)+"%";
       slide.style.transition = "left .4s ease-in-out";
+
+      for(let x of indic) x.classList.remove("on");
+      //3. 블릿표시 변경하기
+      indic[snum].classList.add("on");
 
       // a요소 기본이동막기!
       return false;
