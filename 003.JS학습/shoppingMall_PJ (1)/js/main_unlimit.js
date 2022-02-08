@@ -29,11 +29,14 @@ window.addEventListener("load", () => {
         - 블릿대상 : .indic li
         - 변경내용 : 슬라이드 순번과 같은 순번의
         li에 클래스 "on"주기(나머진 빼기-초기화)
-
         6. 광클릭시 슬라이드 이동 막기
         - 슬라이드가 이동하는 동안 실행을 막아준다
-        - 전역변수ㅡㄹ 생성하여 이 값이 1일 동안 못들어오게 함
-        - 다시 슬라이드 이동 후 시간에는 0으로 해제해준다
+        - 전역변수를 생성하여 이 값이 1일 동안 못들어오게함
+        - 다시 슬라이드 이동 후 시간에는 0으로 해제해준다!
+        7. 자동 슬라이드 넘김 기능
+        - 슬라이드가 일정시간 간격으로 자동으로 넘어감
+        - 슬라이드를 수동으로 버튼 클릭시엔 자동넘김 멈춤
+        - 일정시간동안 수동 조작이 없으면 다시 자동넘김작동
     ************************************/
 
     // 이벤트 대상: .abtn
@@ -49,19 +52,25 @@ window.addEventListener("load", () => {
 
     // 슬라이드가 순서가 바뀌므로 처음에 슬라이드 li에
     // 클래스를 순번에 맞게 부여해 준다!
-    for(let i=0;i<scnt;i++) {
+    for (let i = 0; i < scnt; i++) {
         slide.querySelectorAll("li")[i]
-        .classList.add("s"+i);
+            .classList.add("s" + i);
     } /////// for ///////////////////
 
 
     // 오른쪽버튼 클릭시
-    abtn[1].onclick = () => goSlide(1);
-    ///////// click /////////
+    abtn[1].onclick = () => {
+        goSlide(1);
+        clearAuto();//자동넘김지우기!
+        return false; // a기본막기
+    } ///////// click /////////
 
     // 왼쪽버튼 클릭시
-    abtn[0].onclick = () => goSlide(0);
-    ///////// click /////////
+    abtn[0].onclick = () => {
+        goSlide(0);
+        clearAuto();//자동넘김지우기!
+        return false; // a기본막기
+    } ///////// click /////////
 
     // 광클금지 상태변수
     let prot = 0;
@@ -77,9 +86,9 @@ window.addEventListener("load", () => {
         // console.log("이동함수!", dir);
 
         /////// 광클금지 ///////
-        if(prot) return false; // 돌아가!(기본막기)
-        prot = 1;//잠금상태(뒷신호부터 잠긴다!)
-        setTimeout(()=>prot=0,410);
+        if (prot) return false; // 돌아가!(기본막기)
+        prot = 1; //잠금상태(뒷신호부터 잠긴다!)
+        setTimeout(() => prot = 0, 410);
         // 0.41초후에 다시 허용상태로 변경!
         // 0.41초는 기본 이동 트랜지션 시간은 0.4초지만
         // 왼쪽버튼 클릭시 실행시간간격이 0.01초있기에
@@ -98,25 +107,25 @@ window.addEventListener("load", () => {
             // 2. 이동후 잘라서 끝으로 이동 + left:0
             // 이동후-> setTimeout(함수,시간)
             // 0.4초후 함수실행!
-            setTimeout(()=>{
+            setTimeout(() => {
                 // 2-1. 첫번째 슬라이드 맨뒤로이동
                 slide.appendChild(
                     slide.querySelectorAll("li")[0]);
                 // 첫번째 슬라이드 선택: #slide>li중 1번째
                 // 맨뒤로 이동: appendChild(요소)
-                
+
                 // 2-2. left값 초기화 + 트랜지션해제!
                 slide.style.left = "0";
                 slide.style.transition = "none";
 
-            },400); ///// setTimeout //////
+            }, 400); ///// setTimeout //////
 
         } ///////////////// if /////////////
         // (2) 왼쪽버튼
         else {
             // 1. 맨뒤요소 맨앞으로 이동하기
             slide.insertBefore(
-                slide.querySelectorAll("li")[scnt-1],
+                slide.querySelectorAll("li")[scnt - 1],
                 slide.querySelectorAll("li")[0]
             );
             // 맨뒤요소: #slide>li중 맨끝(개수-1)
@@ -130,17 +139,17 @@ window.addEventListener("load", () => {
             // 3. left가 0, 트랜지션설정 - 슬라이드들어오기
             // 위의 같은 속성변경과 시차가 반드시 필요함!
             // setTimeout으로 시차를 줌!(0.01초만 줘도됨)
-            setTimeout(()=>{
+            setTimeout(() => {
                 slide.style.left = "0";
                 slide.style.transition = "left .4s ease-in-out";
-            },10);
+            }, 10);
 
         } ////// else /////////
 
-        
+
         // 3. 블릿표시 변경하기
         // (1) 초기화 : 모든 블릿li의 class "on"제거
-        for(let x of indic) x.classList.remove("on");
+        for (let x of indic) x.classList.remove("on");
         // (2) 적용하기 : 해당순번의 li에 class "on"넣기
         // 해당순번은 오른쪽이동과 왼쪽이동에 따라 다르다!
         // -> 오른쪽이동일땐 슬라이드 1번, 왼쪽은 0번
@@ -149,9 +158,9 @@ window.addEventListener("load", () => {
         // dir?1:0 
         // -> dir변수가 1이면 true여서 1출력 아니면 0출력
         // 해당순번은 선택할 li요소의 class명의 뒷번호다!
-        let clsnum = 
-        slide.querySelectorAll("li")[dir?1:0]
-        .getAttribute("class").substring(1);
+        let clsnum =
+            slide.querySelectorAll("li")[dir ? 1 : 0]
+            .getAttribute("class").substring(1);
         // substring(1) -> 2번째 문자부터 끝까지
         // -> 여기서는 "s번호"이므로 s뒤의 번호가 나옴
         // console.log("클래스명:",clsnum);
@@ -164,20 +173,41 @@ window.addEventListener("load", () => {
     }; //////// goSlide 함수 /////////////
     //////////////////////////////////////
 
-    let autoI;
+    // 인터발용변수
+    let autoI; //지우기용
+    /**************************************** 
+        함수명: autoSlide
+        기능: 인터발함수로 슬라이드 자동넘기기
+    ****************************************/
     const autoSlide = () => {
-        autoI = setInterval(() =>goSlide(1), 2000);
-    };
+        autoI = setInterval(() => goSlide(1), 2000);
+    }; /////////// autoSlide 함수 ///////////
+    /////////////////////////////////////////
+
+    // 자동넘김함수 최초호출하기!
+    // (함수아래에서 호출해야함!)
     autoSlide();
 
-    let autoT;
-    /******************************
-     * 함수명 : clearAuto
-     * 기능 : 자동넘김지우고 일정시간뒤 다시 자동호출
-    ******************************/
+    // 타임아웃용변수
+    let autoT; // 지우기용(실행쓰나미방지!)
+    /*********************************************** 
+        함수명: clearAuto
+        기능: 자동넘김지우고 일정시간뒤 다시 자동호출
+        -> 오른쪽, 왼쪽 이동버튼 클릭시에만 호출됨!
+    ***********************************************/
     const clearAuto = () => {
+        // 1. 인터발 지우기
         clearInterval(autoI);
-        autoT = setTimeout(autoSlide, 3000);
-    }
+        // 2. 타임아웃 지우기: 실행 쓰나미 방지!
+        clearTimeout(autoT);
+        // 3. 타임아웃 셋팅: 일정시간뒤 인터발실행
+        autoT = setTimeout(autoSlide,3000);
+        // 3초후 인터발호출, 2초후 인터발 최초실행
+    }; ////////////// clearAuto 함수 /////////////////
+    //////////////////////////////////////////////////
+
+
+
+
 
 }); ///////////// load //////////////////////
