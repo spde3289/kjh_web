@@ -16,16 +16,21 @@ html,body{
 
 /* 2. a요소 리셋 */
 a{
-    color: #fff;
+    color: #666;
     /* 글자색 흰색 */
     text-decoration: none;
     /* 밑줄없앰 */
+    letter-spacing: -1px;
 }
 
 /* 3. ul,ol 리셋 */
 ul,ol{
     list-style: none;
     /* 블릿/숫자 제거 */
+}
+
+.topbar ul li{
+    height: 16px;
 }
 
 /* 4. h요소 글자크기 리셋 */
