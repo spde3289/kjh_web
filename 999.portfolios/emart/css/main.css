@@ -70,13 +70,34 @@
 
 /* 상단영역 메뉴 */
 .top {
-    height: 100px;
+    padding: 40px 0 30px 0;
+    margin: 0 auto;
+}
+
+.top nav{
+    width: 980px;
+    margin: 0 auto;    
 }
 
 
-/* 2. 하단영역 */
-.info {
-    height: 323px;
+.top ul{
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    text-align: center;
+}
+
+.top ul li{
+    margin: 0 35px 0 35px;
+}
+
+
+
+#top nav ul li a {
+    padding-bottom: 10px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* 3. 메인영역 */
@@ -102,4 +123,9 @@
 
 .c6 {
     height: 124px;
+}
+
+/* 2. 하단영역 */
+.info {
+    height: 323px;
 }

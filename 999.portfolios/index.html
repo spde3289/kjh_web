@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프론트엔드 웹개발 3회차 : 학생포폴 타겟사이트</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            perspective: 480px;
+        }
+        .tit{
+            text-align: center;
+        }
+        .board{
+            position: relative;
+            max-width: 800px;
+            height: 90vh;
+            box-sizing: border-box;
+            border: 2px solid silver;
+            margin: 0 auto;
+            transform: rotateX(45deg);
+            transform-origin: bottom;
+            perspective: 480px;
+            perspective-origin: bottom;
+        }
+        dl{    
+            position: absolute;  
+            transform-origin: bottom;
+            transition: .4s ease-out;
+            font-size: 40px;
+            border: 1px solid #000;
+            background-color: rgb(59, 45, 255);
+            mix-blend-mode: screen;
+        }
+        dl:hover{
+            transform: rotateX(-45deg);
+        }
+
+        dl:nth-child(1){
+            bottom: 5%;
+            left: 5%;
+        }
+
+        dl:nth-child(2){
+            bottom: 7%;
+            right: 5%;
+        }
+
+        dl:nth-child(3){
+            bottom: 20%;
+            left: 7%;
+        }
+        dl:nth-child(4){
+            bottom: 25%;
+            right: 10%;
+        }
+        dl:nth-child(5){
+            bottom: 37%;
+            left: 2%;
+        }
+        dl:nth-child(6){
+            bottom: 47%;
+            right: 10%;
+        }
+        dl:nth-child(7){
+            bottom: 57%;
+            left: 10%;
+        }
+        dl:nth-child(8){
+            bottom: 67%;
+            right: 12%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 class="tit">프론트엔드 웹개발 3회차 : 학생포폴 타겟사이트</h1>
+    <div class="board">
+
+        <dl>
+            <dt>1. 강정구</dt>
+            <dd>
+                <a href="https://jejubeer.co.kr/" target="_blank">
+                    제주맥주
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>2. 김성진</dt>
+            <dd>
+                <a href="https://developers.kakao.com/" target="_blank">
+                    네이버 웨일
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>3. 김지훈</dt>
+            <dd>
+                <a href="https://store.emart.com/main/main.do" target="_blank">
+                    이마트
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>4. 박지윤</dt>
+            <dd>
+                <a href="https://parks-tokyo.com/" target="_blank">
+                    Parks Tokyo
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>5. 안영근</dt>
+            <dd>
+                <a href="https://www.matchroomboxing.com/" target="_blank">
+                    Match Room Boxing
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>6. 이유민</dt>
+            <dd>
+                <a href="https://www.naver.com/" target="_blank">
+                    Naver
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>7. 최건호</dt>
+            <dd>
+                <a href="https://www.microsoft.com/" target="_blank">
+                    Microsoft
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>8. 한송이</dt>
+            <dd>
+                <a href="https://catchball.kr/index.html" target="_blank">
+                    캐치볼 스니커즈
+                </a><br>
+                <a href="./Catchball_분석설계.pdf" target="_blank">캐치볼분석설계</a>
+            </dd>
+        </dl>
+    </div>
+
+</body>
+
+</html>

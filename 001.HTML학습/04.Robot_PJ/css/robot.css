@@ -1,0 +1,542 @@
+@charset "utf-8";
+
+/* 로봇 PJ CSS - robot.css */
+
+/* 웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
+
+/* 
+font-family: 'Neonderthaw', cursive;
+*/
+
+html{
+    scroll-behavior: smooth;
+    /* 내부 아이디 위치이동시 스크롤
+    애니메이션을 부드럽게 처리함! 
+    최상위 요소인 html에 셋팅함! */
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(../images/bg.jpg) no-repeat fixed top/cover;
+    overflow-x: hidden;
+    /* x축 스크롤바 없애기 */
+}
+
+/* 공사중 아웃라인 */
+/* body *{
+    outline: 5px dashed lime;
+} */
+
+/* 로봇페이지 로고 */
+h1#logo{
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    /* 보이는 화면기준! */
+    z-index: 1;
+
+    /* 크기 확대하기 : 2배 */
+    transform: scale(2);
+
+    width: 200px;
+    height: 200px;
+    border: 2px solid #ccc;
+    border-radius: 50%;/* 원 */
+    margin: 0;
+    /* h1요소의 기본마진 없앰! */
+
+    /* 글자중앙 */
+    text-align: center;
+    line-height: 200px;
+
+    color: #fff;
+    font-family: "Vladimir Script";
+    font-size: 60px;
+    text-shadow: 2px 2px 2px #000;
+    /* 글자그림자: x y blur 색 */
+    box-shadow: 0 0 20px 5px pink,
+                inset 0 0 20px 5px #000;
+    /* 박스그림자: 내부 x y blur spread 색 */
+    /* 박스그림자나 글자그림자는 콤마로 여러개 셋팅가능! */
+
+    /* 배경 */
+    background: pink url(../images/robot_03.png) no-repeat;
+    background-position: center 10px;
+    background-size: 160px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: logoAni 2s ease-in-out 2s forwards,
+               logoAni2 1s ease-in-out 4s infinite alternate;
+}
+
+
+/* 로고 키프레임 */
+@keyframes logoAni {
+    /* from은 초기값과 같으므로 생략! */
+    80%{
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(0deg);
+    }
+    /* 80%~100% 구간에 rotate각도만 20도로 변경애니
+    후속애니와 자연스럽게 연결됨! */
+    100%{
+        top: 50px;
+        left: 50px;
+        transform: scale(1) rotate(20deg);
+    }
+} /* logoAni 키프레임 */
+
+/* 로고 흔들기 키프레임 */
+@keyframes logoAni2 {
+    from{
+        transform: scale(1) rotate(20deg);
+    }
+    to{
+        transform: scale(1) rotate(-20deg);
+    }
+} /*  logoAni2 키프레임 */
+
+/******************************************************* 
+    [ CSS 로 애니메이션 하기 ]
+
+    - 시간에 따라 CSS설정을 변경하여 애니메이션 하도록
+    키프레임을 설정하고 이것을 호출함으로 의도된 연출을
+    구현하는 것이 CSS 애니메이션이다!
+
+    [ 애니메이션 키프레임 만들기 ]
+    - 키프레임이란? 애니메이션 장면을 넣는 코드
+
+    1. 두장면 키프레임
+
+    @keyframes 키프레임이름{
+        from{시작CSS설정}
+        to{끝나는CSS설정}
+    }
+
+    또는
+
+    @keyframes 키프레임이름{
+        0%{시작CSS설정}
+        100%{끝나는CSS설정}
+    }
+
+    -> 만약 from설정과 초기설정이 같다면 from을 생략할 수 있다!
+
+    2. 여러장면 키프레임
+    @keyframes 키프레임이름{
+        0%{CSS설정}
+        10%{CSS설정}
+        20%{CSS설정}
+        ...
+        90%{CSS설정}
+        100%{CSS설정}
+    }
+
+    (1) 장면에 대한 시간 계산은 어떻게 하나?
+    -> 전체시간 * 설정된%/100
+
+    (2) 전체시간 설정은 호출시에 셋팅함!
+
+    [ 설정된 키프레임 호출하는 방법 ]
+
+    animation: 이시이지반방마
+    (이름 시간 이징 지연 반복 방향 마지막상태)
+
+    1. 이름(animation-name) : 키프레임 이름
+    2. 시간(animation-duration) : 애니메이션 동작시간
+        -> 초단위(s)
+    3. 이징(animation-timing-function) : easing가속도
+    4. 지연(animation-delay) : 애니메이션 시작지연시간(s)
+    5. 반복(animation-iteration-count) : 애니메이션 반복
+        - 기본값 1 , 숫자를 쓰면 숫자만큼 반복함!
+        - 영원히는 infinite(인피니트)
+    6. 방향(animation-direction) : 시작 -> 끝
+        - 반복시 시작과 반대경로로 애니를 만들어줌
+        -> alternate : 시작->끝, 끝->시작
+    7. 마지막상태(animation-fill-mode) : 
+        - 애니메이션이 끝났을때 처음으로 돌아가는게 기본인데
+        -> forwards (앞쪽에... 즉, 애니끝장면으로 마무리!)
+
+
+*******************************************************/
+
+
+
+/* 내용보기 링크 타이틀 */
+.link{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    /* 부모는? 보이는 화면 */
+    opacity: 0;/* 처음에 안보임 */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt 1s ease-in 6s forwards;
+}
+/* 링크, 탑버튼, 로봇TV 등장 키프레임 */
+@keyframes showIt {
+    0%{opacity: 0;}
+    20%{opacity: 0.5;}
+    30%{opacity: 0;}
+    40%{opacity: 1;}
+    60%{opacity: 0.3;}
+    70%{opacity: 0;}
+    100%{opacity: 1;}
+} /*  showIt 키프레임 */
+.link a{
+    font-family: 'Neonderthaw', cursive;
+    font-size: 4vw;
+    font-weight: normal;
+    color: lawngreen;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #000;
+}
+/* 오버시 */
+.link a:hover{
+    color: orangered;
+    text-decoration: overline;
+}
+
+/* 위로이동버튼 */
+.btnTop{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    /* 보이는화면 기준 */
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    color: blue;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ccc;
+    
+    opacity: 0;/* 처음에 안보임 */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt 1.5s ease-in 7s forwards;
+}
+/* 버튼오버시 */
+.btnTop:hover{
+    background-color: #ff0;
+    color: red;
+}
+
+
+
+
+/* 로봇머리 */
+#head{
+    position: relative;
+    /* 부모자격 */
+    left: 100%;
+    /* 오른쪽 바깥에 나가있음! */
+    width: 250px;
+    height: 250px;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: robotAni 1.5s ease-out 3s forwards;
+}
+
+
+/* 로봇머리, 몸 제자리 키프레임! */
+@keyframes robotAni {
+    to{
+        left: 0;
+    }
+} /* robotAni 키프레임 */
+
+
+/* 눈1 */
+#eye1{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    /* 부모는? #head */
+
+    width: 50px;
+    height: 50px;
+    background: url(../images/e1.jpg) no-repeat 0/100% 100%;
+}
+/* 눈2 */
+#eye2{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    /* 부모는? #head */
+    width: 50px;
+    height: 50px;
+    background: url(../images/e2.jpg) no-repeat 0/100% 100%;
+}
+/* 코 */
+#nose{
+    position: absolute;
+    top: 108px;
+    left: 100px;
+    /* 부모는? #head */
+    width: 50px;
+    height: 70px;
+    background: url(../images/nose.jpg) no-repeat 0/110% 100%;
+}
+/* 입 */
+#mouth{
+    position: absolute;
+    bottom: 8px;
+    left: 65px;
+    /* 부모는? #head */
+    width: 120px;
+    height: 50px;
+    background: url(../images/mouth.png) no-repeat 0/100% 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: mouthAni .1s linear 6s infinite alternate;
+}
+/* 입움직이기 키프레임 */
+@keyframes mouthAni {
+    0%{
+        transform: scaleY(1);
+    }
+    100%{
+        transform: scaleY(.2);
+    }
+} /* mouthAni 키프레임 */
+
+/* 귀공통 */
+.ear{
+    position: absolute;
+    top: 72px;
+    width: 50px;
+    height: 100px;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+/* 귀1 */
+#ear1{
+    left: -50px;
+    border-radius: 20px 0 0 20px;
+    /* 보더 각 셋팅: 왼쪽위부터 시계방향 */
+}
+/* 귀2 */
+#ear2{
+    right: -50px;
+    border-radius: 0 20px 20px 0;
+}
+
+/* 로봇몸 */
+#body{
+    position: relative;
+    /* 부모자격 */
+    left: -100%;
+    /* 왼쪽바깥에 나가있음! */
+    width: 250px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    /* 다리가 내려간 만큼 하단여유공간확보! */
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: robotAni 1.5s ease-out 3s forwards;
+}
+/* 목 */
+#neck{
+    position: absolute;
+    top: -50px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    background: url(../images/metal02.jpg) no-repeat 0/100% 100%;
+}
+
+/* 팔,다리공통 */
+.part{
+    position: absolute;
+    width: 50px;
+    height: 250px;
+    background: url(../images/metal02.jpg) repeat-y 0/100%;
+}
+/* 왼팔 */
+#arm1{
+    top: 20px;
+    left: -50px;
+}
+/* 오른팔 */
+#arm2{
+    top: 20px;
+    right: -50px;
+    transform-origin: top;
+    /* 세로기준축을 맨위로 변경! */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: armAni .8s ease-in-out 5s forwards,
+               armAni2 .4s ease-in-out 5.8s infinite alternate;
+}
+
+/* 오른팔 키프레임 */
+@keyframes armAni {
+    to{
+        transform: rotate(-152deg);
+    }
+}/* armAni 키프레임 */
+
+/* 오른팔 흔들기 키프레임 */
+@keyframes armAni2 {
+    0%{
+        transform: rotate(-152deg);
+    }
+    100%{
+        transform: rotate(-132deg);
+    }
+}/* armAni 키프레임 */
+
+/* 왼다리 */
+#leg1{
+    top: 100%;
+}
+/* 오른다리 */
+#leg2{
+    top: 100%;
+    right: 0;
+}
+/* 어깨공통 */
+.sh{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url(../images/metal01.jpg) no-repeat center/cover;
+}
+/* 왼쪽어깨 */
+#sh1{
+    top: -20px;
+    left: -80px;
+    border-radius: 50% 5px 0 50%;
+}
+/* 오른쪽어깨 */
+#sh2{
+    top: -20px;
+    right: -80px;
+    border-radius: 5px 50% 50% 0;
+}
+/* TV */
+#tv{
+    position: absolute;
+    top: 55px;
+    left: 24px;
+    /* 부모는? #body */
+    width: 200px;
+    height: 150px;
+    background: url(../images/tv.jpg) no-repeat 0/100% 100%;
+    
+    opacity: 0;/* 처음에 안보임 */
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: showIt 3s ease-in 5s forwards;
+}
+/* 스크린 */
+#screen{
+    position: absolute;
+    top: 17px;
+    left: 13px;
+    width: 138px;
+    height: 106px;
+    background-color: #000;
+    border-radius: 16px;
+    
+    overflow: hidden;
+    /* 아이프레임 크기 조정시 넘치는 부분 숨기기 */
+}
+/* 유튜브 아이프레임 */
+#screen iframe{
+    position: absolute;
+    top: -11px;
+    left: -47px;
+    /* 부모는? #screen */
+    width: 164%;
+    height: 125%;
+}
+
+/* 로봇설명박스 */
+#dcbx{
+    width: 800px;
+    margin: 0 auto;/* 마영오 */
+    margin-bottom: 200px;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    padding: 15px 30px;
+    /* 패딩: 위아래 양쪽 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 반투명 검정배경 */
+
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    /* 글자그림자: x y 블러 색 */
+    box-shadow: inset 0 0 60px cyan;
+    /* 박스그림자: (내부) x y 블러 (크기) 색 */
+
+}
+/* 로봇설명 제목 */
+#dcbx h2{
+    position: sticky;
+    top: 0;
+    /* sticky의 top의 의미는 보이는 화면에서
+    top위치값보다 커지면 fixed로 고정해줌! */
+    font-size: 35px;
+    text-align: center;
+    color: lime;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+/* 설명출처 */
+#dcbx small{
+    display: block;
+    /* 텍스트 중앙정렬위해 */
+    text-align: center;
+    color: #ff0;
+}
+/* 설명문단 */
+#dcbx p{
+    font-size: 15px;
+    /* 기본글자크기 16px */
+    line-height: 1.8;
+    /* 줄간격: 배수/단위 등 */
+    letter-spacing: 1px;
+    /* 자간 */
+    word-spacing: 2px;
+    /* 단어간격 */
+
+    /* 가독성을 위한 다단설정 */
+    /* 다단표기(다중열속성) */
+    column-count: 3;
+    /* 다중열개수 */
+    column-rule: 5px dotted lime;
+    /* 다중열구분선 
+    - 값은 보더와 같다(두께 종류 색상) */
+    column-gap: 55px;
+    /* 다중열 사이간격 - 구분선 오른쪽 간격조정 */
+
+    text-align: justify;
+    /* 양쪽정렬 - 양쪽 끝 라인을 맞춤! */
+    word-break: break-all;
+    /* 단어깨기! - 단어단위를 한글자씩 깨준다!
+    양쪽 정렬시 사용하면 보기 좋아진다! */
+    text-indent: 20px;
+    /* 첫줄 들여쓰기(마이너스값을 쓰면 내어쓰기임) */
+
+}
+
+/* 가상요소로 첫글자 디자인변경하기 */
+#dcbx p::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+    color: lightsalmon;
+}

@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* 외부 CSS파일의 상단엔 반드시 문자셋을 해야함!
+이것 이전엔 아무것도 쓰면 안된다!!! */
+
+
+/* 1. 상단영역 */
+#top {
+    text-align: center;
+    /* 텍스트 중앙정렬 */
+    width: 727px;
+
+    /* 박스 바깥여백(마진:margin) */
+    margin: 20px auto;
+    /* margin: 위아래 양쪽 
+    -> 크기를 가진 블록박스의 양쪽 마진을 
+    auto로 설정하면 가로방향 중앙정렬됨! 
+        magin: 0 auto; -> 마영오씨!
+    */
+
+    /* 박스 안쪽여백(패딩:padding) */
+    padding: 10px;
+
+    /* 박스 크기유지하기(패딩,보더포함) */
+    box-sizing: border-box;
+    /* 기본값 content-box 
+                -> 사이즈 지정시 패딩,보더만큼 커짐 */
+
+    /* 배경색넣기 */
+    background-color: #ffe4db;
+}
+
+/* 상단영역과 하단영역에 보더 넣기 */
+/* 선택자를 콤마(,)로 연결 -> 그룹선택자 */
+#top,
+#info {
+    border: 1px solid silver;
+    /* 
+        박스의 테두리 속성
+        border: 두께 종류 색상;(두종색) 
+    */
+}
+
+/* 속성선택자[] */
+
+/* = 정확히 일치  */
+/* [href="http"] { */
+
+/* ^= 시작하는 문자 */
+/* [href^="http"] { */
+
+/* $= 끝나는 문자 */
+/* [href$="722"] { */
+
+/* *= 내용중 문자 */
+/* [href*="tp"] { */
+
+[href^="http"] {
+    color: #222;
+    text-decoration: none;
+    /* a요소 기본값 변경하기! */
+}
+
+/* 마우스 오버시 밑줄 */
+/* :hover 마우스 오버시 가상클래스 */
+[href^="http"]:hover {
+    text-decoration: underline;
+}
+
+/* 정치 주요뉴스에 사이 구분선 넣기 */
+/* li+li 앞에 li형제가 있는 형제li요소 선택 */
+/* +는 형제선택자 */
+.pnews li+li {
+    border-top: 4px dotted hotpink;
+}
+
+/* 첫번째 li를 선택하기 */
+/* 마치 클래스를 준것 같다하여 가상클래스라고함! */
+/* .rnews li:last-child{ */
+/* .rnews li:nth-child(2){ */
+.rnews li:first-child {
+    font-size: 22px;
+}
+
+/* 랭킹뉴스에 사이 구분선 넣기 */
+/* 선택자~선택자 : 앞의 선택자 뒤의 형제요소 모두선택 */
+/* ~(틸드) 다중형제선택자 */
+.rnews li:first-child~li {
+    border-top: 4px dashed green;
+}
+
+/* 큰제목 */
+#top h1 {
+    color: #ec0082;
+    text-shadow: 2px 2px 2px #5e5e5e;
+    /* 글자그림자
+                text-shadow: x축 y축 블러 색; */
+}
+
+/* 제목 일부 글자색변경 */
+/* .(점)은 클래스 선택자 */
+.fc {
+    color: red;
+}
+
+/* 메뉴 a요소 */
+/* 요소명.클래스명 - 종속선택자 */
+nav.gnb a {
+    color: #129700;
+    /* 글자색 */
+    text-decoration: none;
+    /* 밑줄없앰 */
+    font-weight: bold;
+    /* 글자두껍게 */
+}
+
+/* 로고이미지 */
+nav img {
+    vertical-align: -4px;
+    /* 인라인요소간 세로정렬 */
+}
+
+/* 2.메인영역 */
+main {
+    width: 727px;
+    margin: 0 auto;
+    /* 마영오! */
+    /* text-align: center; */
+    /* 인라인요소 중앙정렬 */
+}
+
+/* 메인 문단 */
+main p {
+    /* font-style: italic; */
+    /* 글자스타일 - 기본 normal */
+
+    /* font-weight: bold; */
+    /* 글자두께 
+    - lighter/bold/bolder/100/200등 숫자 */
+
+    font-size: 17px;
+    /* 글자크기 */
+    font-family: "굴림", "궁서";
+    /* 글자체 - 여러글자체는 우선순위임
+    (없으면 뒤엣것나옴) */
+    line-height: 1.5;
+    /* 줄간격 - 숫자만 쓰면 글자크기의 배수
+    단위있으면 그 크기만큼 줄간격 설정됨 */
+    letter-spacing: -1px;
+    /* 자간(글자간격) - 기본값0 */
+    word-spacing: 2px;
+    /* 단어간격 - 기본값0 */
+
+    padding: 0 30px;
+    /* 안쪽여백 */
+
+}
+
+/* 하단영역 */
+footer {
+    width: 727px;
+    margin: 0 auto;
+    /* 마영오! */
+    text-align: center;
+    /* 인라인요소 중앙정렬 */
+    padding: 20px;
+    background-color: #ebebeb;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* 주소박스 */
+address {
+    font-style: normal;
+    /* 이탤릭해제 */
+    font-size: 14px;
+    /* 글자크기(기본값->16px) */
+    color: #555;
+}
