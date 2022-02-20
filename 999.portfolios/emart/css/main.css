@@ -11,17 +11,11 @@
 } */
 
 /* 속박스 class */
-.ibx {
-    max-width: 1200px;
-    /* 최대 1200px, 보다 작아지면 auto */
-    margin: 0 auto;
-    /* 박스 중앙정렬 */
-}
 
 .ibx h2 {
     text-align: center;
     font-size: 30px;
-    color: lightseagreen;
+    color: #000;
     outline: none;
 }
 
@@ -79,7 +73,6 @@
     margin: 0 auto;    
 }
 
-
 .top ul{
     display: flex;
     justify-content: center;
@@ -91,8 +84,6 @@
     margin: 0 35px 0 35px;
 }
 
-
-
 #top nav ul li a {
     padding-bottom: 10px;
     color: #000;
@@ -103,18 +94,167 @@
 /* 3. 메인영역 */
 .c1 {
     height: 560px;
+    width: 1180px;
+    padding: 0 42px;
+    margin: 0 auto;
 }
 
-.c2 {
+.c1_1 {
+    position: relative;
+    margin: -75px auto;
     height: 149px;
+    width: 900px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.inner{
+    position: relative;
+    width: 505px;
+    height: 67px;
+    padding: 0 65px 0 150px;
+    margin: 40px auto;
+    border-bottom: 2px solid #000;
+}
+
+.inner h2{
+    position: absolute;
+    left: 0;
+    top: -3px;
+    font-size: 20px;
+    color: #000;
+}
+
+.inner ul{
+    width: 505px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.sub1{
+    width: 5000px;
+}
+
+.ani{
+    animation: playlist 56.8515s linear 1s infinite normal none running;
+} 
+
+.sub1 li{
+    float: left;
+    padding-right: 50px;
+    font-size: 15px;
+}
+
+@keyframes playlist {
+    100% {
+        transform: translateX(-2368px);
+    }
+}
+
+.control{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.control span{
+    width:24px;
+    height: 24px;
+    display: block;
+}
+
+.control span.on{
+    display: block;
+}
+
+.stop{ 
+    background: url(../imgs/main_top_slide.png) no-repeat;
+    background-position: 0 -58px;
+}
+
+.start{ 
+    background: url(../imgs/main_top_slide.png) no-repeat;
+    background-position: 0 -28px;
+}
+
+
+
+.c2 {
+    width: 980px;
+    margin: 0 auto;
+    margin-top: 180px;
+}
+
+.main{ 
+    width: 1644px;
+    transform: translateX(-332px);
+}
+.c2 h2 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    line-height: 1;
+}
+
+.mainbenner{
+    display: flex;
+    width: 1644px;
+}
+
+.slide{
+    width: 316px;
+    margin-right: 16px;
+}
+
+.slide span{
+    display: block;
+    padding: 50px 0 0 0;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+}
+
+.slide :hover span{
+    text-decoration: underline;
 }
 
 .c3 {
-    height: 134px;
+    width: 996px;
+    margin: 100px auto;
 }
 
-.c4 {
-    height: 478px;
+.c3 h2{
+    margin-bottom: 32px;
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    line-height: 1;
+}
+
+.maincover{
+    width: 980px;
+    margin: 0 auto;
+}
+
+.maincover div{
+    float: left;
+}
+
+#leftimg{
+    margin-right: 332px;
+}
+
+#rightimg{
+    float: left;
+    width: 316px;
+    margin-left: -316px;
+}
+
+#rightimg :first-child{
+    margin-bottom: 16px;
 }
 
 .c5 {

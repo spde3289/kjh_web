@@ -15,7 +15,7 @@ html,body{
 }
 
 /* 2. a요소 리셋 */
-a{
+a,body{
     color: #666;
     /* 글자색 흰색 */
     text-decoration: none;
@@ -38,3 +38,4 @@ h1,h2,h3,h4,h5,h6{
     font-size: 100%;
     /* html의 기본글자크기(16px)와 일치 초기화 */
 }
+
