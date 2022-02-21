@@ -162,7 +162,7 @@
 .control span{
     width:24px;
     height: 24px;
-    display: block;
+    display: none;
 }
 
 .control span.on{
