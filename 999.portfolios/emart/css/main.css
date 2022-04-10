@@ -278,17 +278,34 @@
 
 
 .over{
-    display: none
+    display: none;
+}
+
+
+.c5 li:hover img:first-child{
+    display: none;
 }
 
 .c5 li{
     display: inline-block;
     text-align: center;
-    width: 143px;
+    width: 140px;
 }
 
 .c5 span{
     display: block;
+    margin-top: 16px;
+    font-size: 13px;
+    color: #808080;
+    line-height: 1;
+}
+
+.c5 li:hover .over{
+    display: inline;
+}
+
+.c5 li:hover span{
+    color: #000;
 }
 
 .c6 {
