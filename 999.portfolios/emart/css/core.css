@@ -33,6 +33,10 @@
     right: 0;
 }
 
+a{
+    display: inline-block;
+}
+
 /* IR(Image Replacement) 클래스 */
 .ir{
     display: block;

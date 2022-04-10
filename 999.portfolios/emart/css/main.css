@@ -223,6 +223,7 @@
 
 .c3 {
     width: 996px;
+    height: 568px;
     margin: 100px auto;
 }
 
@@ -254,11 +255,40 @@
 }
 
 #rightimg :first-child{
-    margin-bottom: 16px;
+    margin-bottom: 11px;
 }
 
-.c5 {
-    height: 568px;
+.size-up{
+    width: 316px;
+    height: 248px;
+}
+
+.c5{
+    width: 1168px;
+    height: 124px;
+    margin: 100px auto;
+}
+
+.c5 ul{
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+
+.over{
+    display: none
+}
+
+.c5 li{
+    display: inline-block;
+    text-align: center;
+    width: 143px;
+}
+
+.c5 span{
+    display: block;
 }
 
 .c6 {
