@@ -332,5 +332,22 @@
 }
 
 .f_menu ul > li > a{
+    float: left;
     font-size: 16px;
+    color: #000;
+}
+
+.f_menu ul > li > ul > li{
+    height: 10px;
+    padding: 0 6px;
+    margin: 0;
+    border-left: 1px solid #e5e5e5;
+}
+
+.f_menu ul > li > ul > li > a{
+    display: inline-block;
+    margin-top: -4px;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -1px;
 }
