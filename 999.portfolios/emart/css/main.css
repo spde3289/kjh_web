@@ -308,11 +308,29 @@
     color: #000;
 }
 
-.c6 {
-    height: 124px;
+/* 2. 하단영역 */
+#footer .foot_util{
+    width: 980px;
+    margin: 0 auto;
+    letter-spacing: -2px;
 }
 
-/* 2. 하단영역 */
-.info {
-    height: 323px;
+.f_left{
+    display: inline-block;
+}
+
+.f_menu ul > li{
+    margin-right: 15px;
+}
+
+.f_menu ul li{
+    float: left;
+}
+
+.f_menu ul li ul{
+    float: left;
+}
+
+.f_menu ul > li > a{
+    font-size: 16px;
 }
