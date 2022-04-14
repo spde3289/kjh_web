@@ -315,6 +315,13 @@
     letter-spacing: -2px;
 }
 
+.f_menu{
+    position: relative;
+    padding: 30px 0 30px;
+    border-bottom: 2px solid #000;
+    letter-spacing: 0;
+}
+
 .f_left{
     display: inline-block;
 }
@@ -327,8 +334,11 @@
     float: left;
 }
 
-.f_menu ul li ul{
+.f_menu ul > li > ul{
+    position: relative;
     float: left;
+    margin-left: 10px;
+    top: 4px;
 }
 
 .f_menu ul > li > a{
@@ -346,8 +356,13 @@
 
 .f_menu ul > li > ul > li > a{
     display: inline-block;
-    margin-top: -4px;
+    margin-top: -2px;
     font-size: 14px;
     color: #666;
     letter-spacing: -1px;
 }
+
+.f_menu ul > li > ul > li:first-child{
+    border-left: none;
+} 
+
