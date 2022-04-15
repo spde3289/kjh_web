@@ -326,7 +326,7 @@
     display: inline-block;
 }
 
-.f_menu ul > li{
+.f_left ul > li{
     margin-right: 15px;
 }
 
@@ -334,27 +334,27 @@
     float: left;
 }
 
-.f_menu ul > li > ul{
+.f_left ul > li > ul{
     position: relative;
     float: left;
     margin-left: 10px;
     top: 4px;
 }
 
-.f_menu ul > li > a{
+.f_left ul > li > a{
     float: left;
     font-size: 16px;
     color: #000;
 }
 
-.f_menu ul > li > ul > li{
+.f_left ul > li > ul > li{
     height: 10px;
     padding: 0 6px;
     margin: 0;
     border-left: 1px solid #e5e5e5;
 }
 
-.f_menu ul > li > ul > li > a{
+.f_left ul > li > ul > li > a{
     display: inline-block;
     margin-top: -2px;
     font-size: 14px;
@@ -362,7 +362,27 @@
     letter-spacing: -1px;
 }
 
-.f_menu ul > li > ul > li:first-child{
+.f_left ul > li > ul > li:first-child{
     border-left: none;
 } 
+
+.f_right{
+    float: right;
+}
+
+.f_right span{
+    font-size: 14px;
+    margin: 0 0 0 1px;
+    vertical-align: top;
+}
+
+.f_right ul li a{
+    font-size: 14px;
+    color: #000;
+}
+
+.f_right li {
+    margin-right: 0;
+
+}
 
