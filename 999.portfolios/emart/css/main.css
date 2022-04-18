@@ -315,6 +315,12 @@
     letter-spacing: -2px;
 }
 
+.right{
+    position: relative;
+    float: right;
+    width: 210px;
+}
+
 .f_menu{
     position: relative;
     padding: 30px 0 30px;
@@ -370,7 +376,7 @@
     float: right;
 }
 
-.f_right span{
+.f_right li span{
     font-size: 14px;
     margin: 0 0 0 1px;
     vertical-align: top;
@@ -383,6 +389,5 @@
 
 .f_right li {
     margin-right: 0;
-
 }
 
