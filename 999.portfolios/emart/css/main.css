@@ -309,6 +309,7 @@
 }
 
 /* 2. 하단영역 */
+
 #footer .foot_util{
     width: 980px;
     margin: 0 auto;
@@ -389,5 +390,13 @@
 
 .f_right li {
     margin-right: 0;
+}
+
+.f_left a:hover{
+    text-decoration: underline;
+}
+
+.f_right a:hover{
+    text-decoration: underline;
 }
 
