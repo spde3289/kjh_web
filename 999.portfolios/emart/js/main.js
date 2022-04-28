@@ -4,21 +4,19 @@ window.addEventListener("load",() => {
     let start = document.getElementById("start");
 
     function ani() {
-        document.getElementById("ani").style.animationPlayState="paused";
-        document.getElementById("stop").style.display="none";
-        document.getElementById("start").style.display="block";
+        anis.style.animationPlayState="paused";
+        stop.style.display="none";
+        start.style.display="block";
         console.log("stop");
     }
 
     function reani() {
-        document.getElementById("ani").style.animationPlayState="running";
-        document.getElementById("start").style.display="none";
-        document.getElementById("stop").style.display="block";
+        anis.style.animationPlayState="running";
+        start.style.display="none";
+        stop.style.display="block";
         console.log("start");
     }
 
     stop.addEventListener('click', ani);
     start.addEventListener('click', reani);
 });
-
- 
