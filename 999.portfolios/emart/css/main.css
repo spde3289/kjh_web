@@ -400,3 +400,23 @@
     text-decoration: underline;
 }
 
+.company_info{
+    padding: 28px 0 44px;
+}
+
+.company_info em {
+    float: left;
+}
+
+#footer .company_info .detail_info {
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.company_info .detail_info >li {
+    float: left;
+    margin-right: 14px;
+}
+
+
+
