@@ -444,4 +444,17 @@
     border-top: 1px solid #e5e5e5;
 }
 
+.partner-links li {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.partner-links a {
+    font-size: 13px;
+    color: #333;
+}
+
+.partner-links a > span {
+    color: #666;
+}
 
