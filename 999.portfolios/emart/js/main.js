@@ -19,4 +19,11 @@ window.addEventListener("load",() => {
 
     stop.addEventListener('click', ani);
     start.addEventListener('click', reani);
+
 });
+
+function goFamilySite() {
+    var value = document.getElementById("familysite");
+    var link = value.options[value.selectedIndex].value;
+    window.open(link);
+};  

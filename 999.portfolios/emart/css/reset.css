@@ -39,3 +39,13 @@ h1,h2,h3,h4,h5,h6{
     /* html의 기본글자크기(16px)와 일치 초기화 */
 }
 
+.hide{
+    position: absolute;
+    top: -50000em;
+    left: 0;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
