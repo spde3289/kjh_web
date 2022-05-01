@@ -406,6 +406,7 @@
 
 .company_info em {
     float: left;
+    margin-right: 17px;
 }
 
 #footer .company_info .detail_info {
@@ -416,7 +417,31 @@
 .company_info .detail_info >li {
     float: left;
     margin-right: 14px;
+    font-size: 13px
 }
 
+.important a {
+    color: #ff3c50;
+}
+
+.footer_link {
+    margin-top: 30px;
+}
+
+.footer_link li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer_link a {
+    font-size: 13px;
+    color: #000;
+}
+
+.partner-links {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e5e5;
+}
 
 
