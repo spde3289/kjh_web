@@ -23,7 +23,23 @@ window.addEventListener("load",() => {
 });
 
 function goFamilySite() {
-    var urlList = ["https://company.emart.com/ko/main.do","https://www.shinsegaepoint.com/","https://emart.ssg.com/?ckwhere=emart"];
+    var urlList = [
+    "https://company.emart.com/ko/main.do",
+    "https://www.shinsegaepoint.com/",
+    "https://emart.ssg.com/?ckwhere=emart",
+    "http://www.traders.co.kr/index.jsp",
+    "http://www.emarteveryday.co.kr/",
+    "https://www.emart24.co.kr/",
+    "https://www.shinsegaegroupnewsroom.com/",
+    "https://www.shinsegae.com/index.do",
+    "http://www.sikorea.co.kr/main",
+    "http://www.shinsegaefood.com/main.sf",
+    "https://www.shinsegae-enc.com/",
+    "http://www.sinc.co.kr/main.do",
+    "https://www.starbucks.co.kr/index.do",
+    "https://www.josunhotel.com/intro.do",
+    "https://www.premiumoutlets.co.kr/main/ko",
+    "https://www.ssg.com/"];
     var value = document.getElementById("familysite");
     var link = value.options[value.selectedIndex].value;
     window.open(urlList[Number(link)]);
