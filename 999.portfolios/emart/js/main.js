@@ -23,7 +23,8 @@ window.addEventListener("load",() => {
 });
 
 function goFamilySite() {
+    var urlList = ["https://company.emart.com/ko/main.do","https://www.shinsegaepoint.com/","https://emart.ssg.com/?ckwhere=emart"];
     var value = document.getElementById("familysite");
     var link = value.options[value.selectedIndex].value;
-    window.open(link);
-};  
+    window.open(urlList[Number(link)]);
+};
