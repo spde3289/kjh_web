@@ -42,5 +42,12 @@ function goFamilySite() {
     "https://www.ssg.com/"];
     var value = document.getElementById("familysite");
     var link = value.options[value.selectedIndex].value;
+    console.log(isNaN(link));
+    if(isNaN(link)){
+    
+    }else{
     window.open(urlList[Number(link)]);
+    }
+
 };
+
