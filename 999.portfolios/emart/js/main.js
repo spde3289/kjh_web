@@ -50,6 +50,12 @@ function goFamilySite() {
     }
 };
 
-const a = document.getElementsByTagName("a");
 
-console.log(a);
+var href = document.getElementsByTagName('a');
+console.log(typeof href !== 'undefined');
+if (){
+    console.log("참")
+}
+
+
+
