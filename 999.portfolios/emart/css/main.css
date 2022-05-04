@@ -104,6 +104,7 @@
 
 /* 3. 메인영역 */
 .c1 {
+    position: relative;
     height: 560px;
     width: 1180px;
     padding: 0 42px;
@@ -118,6 +119,28 @@
     background: #fff;
     overflow: hidden;
 }
+
+.left_btn {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    margin-top: -19px;
+    width: 22px;
+    height: 38px;
+    background: url(../imgs/main_top_slide.png) no-repeat 0 -153px;
+}
+
+.right_btn{
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    width: 22px;
+    height: 38px;
+    margin-top: -19px;
+    background: url(../imgs/main_top_slide.png) no-repeat 0 -97px;
+}
+
+
 
 .inner{
     position: relative;

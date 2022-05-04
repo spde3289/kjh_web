@@ -48,6 +48,8 @@ function goFamilySite() {
     }else{
     window.open(urlList[Number(link)]);
     }
-
 };
 
+const a = document.getElementsByTagName("a");
+
+console.log(a);
