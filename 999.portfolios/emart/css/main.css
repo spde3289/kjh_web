@@ -213,6 +213,30 @@
     background-position: 0 -28px;
 }
 
+.control_1{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.on1{
+    display: inline-block;
+}
+
+.start1{
+    display: none;
+    width: 24px;
+    height: 24px;
+    background: url(../imgs/main_top_slide.png) 0 -28px no-repeat;
+}
+.stop1{
+    display: none;
+    width: 24px;
+    height: 24px;
+    background: url(../imgs/main_top_slide.png) 0 -58px no-repeat;
+}
 
 
 .c2 {

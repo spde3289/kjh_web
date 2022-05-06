@@ -52,8 +52,8 @@ function goFamilySite() {
 
 
 var href = document.getElementsByTagName('a');
-console.log(typeof href !== 'undefined');
-if (){
+console.log();
+if (href !== 'undefined'){
     console.log("참")
 }
 
