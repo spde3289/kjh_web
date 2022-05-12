@@ -230,6 +230,12 @@
     cursor: pointer;
 }
 
+.dot_on{
+    background-position: 0 -12px;
+    opacity: 1;
+}
+
+
 .on1{
     display: inline-block;
 }
