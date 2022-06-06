@@ -259,6 +259,9 @@
     background: url(../imgs/main_top_slide.png) 0 -58px no-repeat;
 }
 
+.swiper_dot{
+    background-position: 0 -12px;
+}
 
 .c2 {
     width: 980px;
