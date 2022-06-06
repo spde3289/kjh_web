@@ -242,17 +242,17 @@
 }
 
 
-.on1{
+.control_1 .on_1{
     display: inline-block;
 }
 
-.start1{
+.start_1{
     display: none;
     width: 24px;
     height: 24px;
     background: url(../imgs/main_top_slide.png) 0 -28px no-repeat;
 }
-.stop1{
+.stop_1{
     display: none;
     width: 24px;
     height: 24px;
