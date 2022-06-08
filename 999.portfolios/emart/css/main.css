@@ -63,6 +63,50 @@
 }
 
 /* 상단영역 메뉴 */
+
+.top{
+    padding: 40px 0 30px;
+}
+
+.top nav{
+    width: 980px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.top nav ul{
+    display:inline-block;
+    margin-left: -45px;
+}
+
+.top nav ul li{
+    float: left;
+    margin: 0 35px;
+}
+
+.m01 a{
+    margin-top: -10px;
+}
+
+.top nav ul li a{
+    padding-bottom: 10px;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.m01 a{
+    border-bottom: none;
+}
+
+.top nav ul li:not(.m01) a:hover{
+    border-bottom: 2px solid #000;
+}
+
+
+
+
+/* 
 .top {
     padding: 40px 0 30px 0;
     margin: 0 auto;
@@ -99,7 +143,9 @@
 
 .top nav ul li a:hover{
     border-bottom: 3px solid #000;
-}
+} 
+*/
+
 /*************************************************************/
 
 /* 3. 메인영역 */
