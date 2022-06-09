@@ -51,6 +51,7 @@ function goFamilySite() {
 };
 
 
+<<<<<<< Updated upstream
 var href = document.getElementsByTagName('a');
 console.log(href);
 if (href !== 'undefined'){
@@ -59,3 +60,11 @@ if (href !== 'undefined'){
 
 
 
+
+=======
+var a = document.getElementsByTagName('a');
+console.log();
+if (a !== 'undefined'){
+    console.log("참")
+}
+>>>>>>> Stashed changes
