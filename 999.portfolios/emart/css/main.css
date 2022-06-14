@@ -102,7 +102,7 @@
     border-bottom: none;
 }
 
-.top nav ul li:not(.m01) a:hover{
+.top nav ul li:hover:not(.m01){
     border-bottom: 2px solid #000;
 }
 
@@ -119,7 +119,7 @@
     white-space: nowrap;
 }
 
-.top nav ul li:hover .sub_contain{
+.top nav ul li:hover .sub_contain{   
     display:block;
 }
 
@@ -151,7 +151,6 @@
 
 #top .topSubmenu ol li:hover a{
     color: #000;
-
 }
 
 
