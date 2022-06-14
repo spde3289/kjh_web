@@ -65,6 +65,9 @@
 /* 상단영역 메뉴 */
 
 .top{
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
     padding: 40px 0 30px;
 }
 
@@ -103,11 +106,52 @@
     border-bottom: 2px solid #000;
 }
 
-
-.topSubmenu{
+.sub_contain {
     display: none;
+    position: absolute;
+    top: 67px;
+    left: 50%;
+    padding: 18px 0;
+    margin-left: 45px;
+    width: 423px;
+    background: none;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
+.top nav ul li:hover .sub_contain{
+    display:block;
+}
+
+/* .topSubmenu{
+    display: none;
+    position: absolute;
+    left: 53%;
+    padding: 18px 0;
+    width: 423px;
+    background: none;
+    overflow: hidden;
+    white-space: nowrap
+}
+ */
+
+
+
+#top .topSubmenu ol li{
+    float: left;
+    margin: 0 7px;
+    font-size: 14px;
+    color: #666666;
+}
+
+#top .topSubmenu ol li a{
+    font-size: 14px;
+}
+
+.topSubmenu ol li:hover{
+    color: #000;
+
+}
 
 
 
