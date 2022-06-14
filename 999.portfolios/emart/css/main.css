@@ -145,10 +145,11 @@
 }
 
 #top .topSubmenu ol li a{
+    color: #666666;
     font-size: 14px;
 }
 
-.topSubmenu ol li:hover{
+#top .topSubmenu ol li:hover a{
     color: #000;
 
 }
