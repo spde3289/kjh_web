@@ -1,38 +1,40 @@
 <a id="test_obj" href="https://www.naver.com" target="_blank">페이지 이동</a>
 <button onclick="test()">a링크 href 변경하기</button>
 <a href="#">123</a>
-<a href="#">123</a>
-<a class="alink" href="#">123</a>
+<a href="#" onclick="return false;">123</a>
+<a class="alink" href="#" onclick="return false;">123</a>
 <div class="alink"><a href="#">123456</a></div>
- 
+
 <script>
-    function test() {
-        document.getElementsByTagName("test_obj").href = "https://www.google.co.kr/";
-    }
-    var a =document.getElementsByTagName('a')
-    console.log(a.length)
+  function test() {
+    document.getElementsByTagName("test_obj").href = "https://www.google.co.kr/";
+  }
+  var a = document.getElementsByTagName('a')
+  console.log(a.length)
 
-    var b = a[2].href
-    console.log(b)
-    var unA = console.log("성공!")
-  
-    for(var i=0; i<a.length; i++) {
+  var b = a[2].href
+  console.log(b)
+  var unA = console.log("성공!")
 
-      function Alink(){
-        if(a[i].href==b){
-          a[i].addEventListener('click',false)
-          console.log("성공!!!!!")
-        }
-      }
-      console.log(a[i].href==b);a[i].addEventListener('click',Alink())
+  var aun = a.href
+
+  for (var i = 0; i < a.length; i++) {
+
+    if (a[i].href == b) {
+      console.log(a[i], "성공!!!!!")
+      a[i].addEventListener("click",aI)
     }
-    
-    
+  }
+  function aI(){
+    a.style.href="return false"
+  }
+
+
 </script>
 
 <style>
-  .alink{
-    position : absolute;
+  .alink {
+    position: absolute;
     bottom: -200px;
   }
 </style>
