@@ -22,11 +22,11 @@
 
     if (a[i].href == b) {
       console.log(a[i], "성공!!!!!")
-      a[i].addEventListener("click",aI)
+      a[i].addEventListener("click", ()=> {
+        console.log("클릭이벤트");
+        a[i].style.href = "return false";
+      })
     }
-  }
-  function aI(){
-    a.style.href="return false"
   }
 
 
