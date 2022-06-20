@@ -1,33 +1,36 @@
 <a id="test_obj" href="https://www.naver.com" target="_blank">페이지 이동</a>
 <button onclick="test()">a링크 href 변경하기</button>
 <a href="#">123</a>
-<a href="#" onclick="return false;">123</a>
-<a class="alink" href="#" onclick="return false;">123</a>
+<a href="#" >123</a>
+<a class="alink" href="#" >123</a>
 <div class="alink"><a href="#">123456</a></div>
 
 <script>
   function test() {
     document.getElementsByTagName("test_obj").href = "https://www.google.co.kr/";
-  }
-  var a = document.getElementsByTagName('a')
-  console.log(a.length)
+  };
+  var a = document.getElementsByTagName('a');
+  console.log(a.length);
 
-  var b = a[2].href
-  console.log(b)
-  var unA = console.log("성공!")
+  var b = a[2].href;
+  console.log(b);
+  var unA = console.log("성공!");
 
-  var aun = a.href
+  var aun = a.href;
 
   for (var i = 0; i < a.length; i++) {
 
     if (a[i].href == b) {
-      console.log(a[i], "성공!!!!!")
+      console.log(a[i], "성공!!!!!");
       a[i].addEventListener("click", ()=> {
-        console.log("클릭이벤트");
-        a[i].style.href = "return false";
-      })
-    }
-  }
+        console.log(a[i],"클릭이벤트");
+        preventClick(event);
+      });
+    };
+  };
+  function preventClick(e) {
+    e.preventDefault()
+  };
 
 
 </script>
