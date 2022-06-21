@@ -42,6 +42,8 @@ window.addEventListener("load", () => {
     // 사진 롤링
     var left_btn = document.getElementsByClassName("btns")[0]
     var right_btn = document.getElementsByClassName("btns")[1]
+    var AllBtn = document.querySelectorAll(".btns")
+    console.log(AllBtn)
     console.log(left_btn)
     console.log(right_btn)
     
