@@ -1,49 +1,79 @@
-<a id="test_obj" href="https://www.naver.com" target="_blank">페이지 이동</a>
-<button onclick="test()">a링크 href 변경하기</button>
-<a href="#">123</a>
-<a href="#" >123</a>
-<a class="alink" href="#" >123</a>
-<div class="alink"><a href="#">123456</a></div>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a id="test_obj" href="https://www.naver.com" target="_blank">페이지 이동</a>
+  <button onclick="test()">a링크 href 변경하기</button>
+  <a href="#">123</a>
+  <a href="#" >123</a>
+  <a class="alink" href="#" >123</a>
+  <div class="alink"><a href="#">123456</a></div>
+  
+  <script>
+    const ching = document.getElementById('test_obj');
+    var itest = 0
+  
+    function test() {
 
-<script>
-  function test() {
-    document.getElementsByTagName("test_obj").href = "https://www.google.co.kr/";
-  };
-  var a = document.getElementsByTagName('a');
-  console.log(a.length);
-
-  var b = a[2].href;
-  console.log(b);
-  var unA = console.log("성공!");
-
-  var aun = a.href;
-
-  for (var i = 0; i < a.length; i++) {
-    if (a[i].href == b) {
-      console.log(a[i], "성공!!!!!");
-      a[i].addEventListener("click", ()=> {
-        console.log(a[i],"클릭이벤트");
-        preventClick(event);
-      });
+      console.log(itest);
+      if(itest % 2 == 1){
+        console.log(itest+"네이버");
+        ching.href = "https://www.naver.co.kr"
+        itest --
+      }else if(itest % 2 == 0){
+        console.log(itest+"구글");
+        ching.href = "https://www.google.co.kr"
+        itest ++
+      };
+      
+    
     };
-  };
-  function preventClick(e) {
-    e.preventDefault()
-  };
-
-  function arr (a,b,c,d){
-    console.log(arguments[2])
-    console.log(arr[1]);
-  }
-  console.log(arr)
-  arr(1,2,3,4)
+    
 
 
-</script>
 
-<style>
-  .alink {
-    position: absolute;
-    bottom: -200px;
-  }
-</style>
+
+    var a = document.getElementsByTagName('a');
+    console.log(a.length);
+  
+    var b = a[2].href;
+    console.log(b);
+    var unA = console.log("성공!");
+  
+    var aun = a.href;
+  
+    for (var i = 0; i < a.length; i++) {
+      if (a[i].href == b) {
+        console.log(a[i], "성공!!!!!");
+        a[i].addEventListener("click", ()=> {
+          console.log(a[i],"클릭이벤트");
+          preventClick(event);
+        });
+      };
+    };
+    function preventClick(e) {
+      e.preventDefault()
+    };
+  
+    function arr (a,b,c,d){
+      console.log(arguments[2])
+      console.log(arr[1]);
+    }
+    console.log(arr)
+    arr(1,2,3,4)
+  
+  
+  </script>
+  
+  <style>
+    .alink {
+      position: absolute;
+      bottom: -200px;
+    }
+  </style>  
+</body>
+</html>
