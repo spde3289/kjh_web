@@ -1,5 +1,6 @@
 window.addEventListener("load", () => {
     console.log("로드완료")
+
     let anis = document.getElementById("ani");
     let stop = document.getElementById("stop");
     let start = document.getElementById("start");
@@ -21,6 +22,7 @@ window.addEventListener("load", () => {
     stop.addEventListener('click', ani);
     start.addEventListener('click', reani);
 
+    // href = # 비활성화
     var a = document.getElementsByTagName('a');
 
     var b = a[2].href;
@@ -33,13 +35,18 @@ window.addEventListener("load", () => {
             });
         };
     };
-
     function preventClick(e) {
         e.preventDefault()
     };
 
+    // 사진 롤링
+    var left_btn = document.getElementsByClassName("btns")[0]
+    var right_btn = document.getElementsByClassName("btns")[1]
+    var idbtn = document.getElementById('btn')
+    console.log(left_btn)
+    console.log(right_btn)
+    
 });
-
 
 
 function goFamilySite() {
@@ -61,12 +68,15 @@ function goFamilySite() {
         "https://www.premiumoutlets.co.kr/main/ko",
         "https://www.ssg.com/"
     ];
-    var value = document.getElementById("familysite");
-    var link = value.options[value.selectedIndex].value;
-    console.log(isNaN(link));
-    if (isNaN(link)) {
+    var values = document.getElementById("familysite");
+    var link = values.options[values.selectedIndex].value;
 
-    } else {
+    console.log(values)
+    console.log(link)
+    console.log(urlList[link])
+    console.log(isNaN(link));
+
+    if (urlList[link]){
         window.open(urlList[Number(link)]);
     }
 };
