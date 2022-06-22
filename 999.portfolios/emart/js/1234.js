@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var mainBanner = $(".d-main-banner").BasicBanner({
 		selectors: {
 			listContainer : ".d-list",
-			contentList : ".d-list li",
+		    contentList : ".d-list li",
 			indicator : ".d-indicator ol a",
 			playButton:".d-play",
 			pauseButton: ".d-pause"

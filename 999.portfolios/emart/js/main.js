@@ -1,18 +1,18 @@
-window.addEventListener("load", () => {
+window.addEventListener ("load", () => {
     console.log("로드완료")
 
     let anis = document.getElementById("ani");
     let stop = document.getElementById("stop");
     let start = document.getElementById("start");
 
-    function ani() {
+    function ani () {
         anis.style.animationPlayState = "paused";
         stop.style.display = "none";
         start.style.display = "block";
         console.log("stop");
     }
 
-    function reani() {
+    function reani () {
         anis.style.animationPlayState = "running";
         start.style.display = "none";
         stop.style.display = "block";
@@ -23,20 +23,20 @@ window.addEventListener("load", () => {
     start.addEventListener('click', reani);
 
     // href = # 비활성화
-    var a = document.getElementsByTagName('a');
+    var ATags = document.getElementsByTagName('a');
 
-    var b = a[2].href;
+    var ATrue = ATags[2].href;
 
-    for (var i = 0; i < a.length; i++) {
-        if (a[i].href == b) {
-            a[i].addEventListener("click", () => {
-                console.log(a[i], "클릭이벤트");
+    for (let i = 0 ; i < ATags.length ; i++) {
+        if (ATags[i].href == ATrue) {
+            ATags[i].addEventListener("click", () => {
+                console.log(ATags[i], "클릭이벤트");
                 preventClick(event);
             });
         };
     };
-    function preventClick(e) {
-        e.preventDefault()
+    function preventClick (e) {
+        e.preventDefault ()
     };
 
     // 사진 롤링
@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
 });
 
 
-function goFamilySite() {
+function goFamilySite () {
     var urlList = [
         "https://company.emart.com/ko/main.do",
         "https://www.shinsegaepoint.com/",
@@ -77,7 +77,7 @@ function goFamilySite() {
     console.log(urlList[link])
     console.log(isNaN(link));
 
-    if (urlList[link]){
+    if (urlList[link]) {
         window.open(urlList[Number(link)]);
     }
 };
