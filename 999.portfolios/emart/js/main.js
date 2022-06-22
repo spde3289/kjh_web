@@ -39,11 +39,16 @@ window.addEventListener ("load", () => {
         e.preventDefault ()
     };
 
-    // 사진 롤링
+    // 슬라이드 
     var left_btn = document.getElementsByClassName("btns")[0]
     var right_btn = document.getElementsByClassName("btns")[1]
     var AllBtn = document.querySelectorAll(".btns")
-    console.log(AllBtn)
+    var slideImg = document.querySelector(".changeImg img")
+    /* var ImgList = {
+        "../img"
+    } */
+    console.log(slideImg.src)
+    console.log("../imgs/gnb01.png")
     console.log(left_btn)
     console.log(right_btn)
     
