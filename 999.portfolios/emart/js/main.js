@@ -57,7 +57,8 @@ window.addEventListener("load", () => {
     let NumUp = 0;
     right_btn.onclick = () => num(0);
     left_btn.onclick = () => num(1);
-    dot_on[0].onclick = () => console.log(dot_on[1].getAttribute('data-value'));
+    var arr = dot_on[arr].getAttribute('arr');
+    dot_on[arr].onclick = arr =>dot_on[arr].getAttribute('arr');
 
     const num = num => {
         
