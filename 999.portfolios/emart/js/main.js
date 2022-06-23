@@ -40,32 +40,39 @@ window.addEventListener("load", () => {
         e.preventDefault()
     };
 
-    // 슬라이드 
+    // 이미지 슬라이드 
     var left_btn = document.getElementsByClassName("btns")[0]
     var right_btn = document.getElementsByClassName("btns")[1]
     var slideImg = document.querySelector(".changeImg img")
+    var dot_on = document.getElementsByClassName('dot')
+    dot_on[0].classList.add("dot_on")
+
 
     var ImgList = [
         "./imgs/20211202_0818009_002.jpg",
         "./imgs/20211202_1543008_040.jpg",
         "./imgs/20211215_2032024_380.jpg"
     ];
-
+    slideImg.src = ImgList[0];
     let NumUp = 0;
     right_btn.onclick = () => num(0);
     left_btn.onclick = () => num(1);
 
+    console.log(dot_on[0].value);
     const num = num => {
 
-        if(num){
+        dot_on[NumUp].classList.remove("dot_on");
+        if (num) {
             NumUp--;
-            if(NumUp === -1) NumUp = 2;
-        }else{
+            if (NumUp === -1) NumUp = ImgList.length - 1;
+        } else {
             NumUp++;
-            if(NumUp === 3 ) NumUp = 0;
+            if (NumUp === ImgList.length) NumUp = 0;
         };
+
         console.log(NumUp);
         slideImg.src = ImgList[NumUp];
+        dot_on[NumUp].classList.add("dot_on")
 
     };
 
