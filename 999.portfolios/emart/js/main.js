@@ -57,10 +57,10 @@ window.addEventListener("load", () => {
     let NumUp = 0;
     right_btn.onclick = () => num(0);
     left_btn.onclick = () => num(1);
+    dot_on[0].onclick = () => console.log(dot_on[1].getAttribute('data-value'));
 
-    console.log(dot_on[0].value);
     const num = num => {
-
+        
         dot_on[NumUp].classList.remove("dot_on");
         if (num) {
             NumUp--;
@@ -73,7 +73,7 @@ window.addEventListener("load", () => {
         console.log(NumUp);
         slideImg.src = ImgList[NumUp];
         dot_on[NumUp].classList.add("dot_on")
-
+        
     };
 
 });
