@@ -7,7 +7,7 @@
 </head>
 <body>
   <a id="test_obj" href="https://www.naver.com" target="_blank">페이지 이동</a>
-  <button onclick="test()">a링크 href 변경하기</button>
+  <button Id="btn" onclick="test(), why()">a링크 href 변경하기</button>
   <a href="#">123</a>
   <a href="#" >123</a>
   <a class="alink" href="#" >123</a>
@@ -54,20 +54,34 @@
   
     function arr (a,b,c,d){
       console.log(arguments[2])
-      console.log(arr[1]);
+      console.log(a,b,c,d);
     }
     console.log(arr)
     arr(1,2,3,4)
 
-    var two = 2;
-    var three = 3;
-    var four = 4;
-    function sum (two, three, four){
-      return two + three + four 
+    // parameter
+    var btn = document.getElementById('btn');
+    
+    btn.onclick = ()=> {one(0)}
+    const one = sum => {
+      console.log(sum)
     }
-    sum ()
-    console.log(sum(two, three, four))
-  
+    
+    
+
+    
+    const why = () => {
+    if(itest){
+      return 1
+      why(1)
+      console.log(why)
+    }else{
+      why(0)
+      console.log(why)
+      return false
+    }
+  }
+
   
   </script>
   

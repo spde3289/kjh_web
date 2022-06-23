@@ -1,18 +1,18 @@
-window.addEventListener ("load", () => {
+window.addEventListener("load", () => {
     console.log("로드완료")
 
     let anis = document.getElementById("ani");
     let stop = document.getElementById("stop");
     let start = document.getElementById("start");
 
-    function ani () {
+    function ani() {
         anis.style.animationPlayState = "paused";
         stop.style.display = "none";
         start.style.display = "block";
         console.log("stop");
     }
 
-    function reani () {
+    function reani() {
         anis.style.animationPlayState = "running";
         start.style.display = "none";
         stop.style.display = "block";
@@ -27,7 +27,7 @@ window.addEventListener ("load", () => {
 
     var ATrue = ATags[2].href;
 
-    for (let i = 0 ; i < ATags.length ; i++) {
+    for (let i = 0; i < ATags.length; i++) {
         if (ATags[i].href == ATrue) {
             ATags[i].addEventListener("click", () => {
                 console.log(ATags[i], "클릭이벤트");
@@ -35,27 +35,44 @@ window.addEventListener ("load", () => {
             });
         };
     };
-    function preventClick (e) {
-        e.preventDefault ()
+
+    function preventClick(e) {
+        e.preventDefault()
     };
 
     // 슬라이드 
     var left_btn = document.getElementsByClassName("btns")[0]
     var right_btn = document.getElementsByClassName("btns")[1]
-    var AllBtn = document.querySelectorAll(".btns")
     var slideImg = document.querySelector(".changeImg img")
-    /* var ImgList = {
-        "../img"
-    } */
-    console.log(slideImg.src)
-    console.log("../imgs/gnb01.png")
-    console.log(left_btn)
-    console.log(right_btn)
-    
+
+    var ImgList = [
+        "./imgs/20211202_0818009_002.jpg",
+        "./imgs/20211202_1543008_040.jpg",
+        "./imgs/20211215_2032024_380.jpg"
+    ];
+
+    let NumUp = 0;
+    right_btn.onclick = () => num(0);
+    left_btn.onclick = () => num(1);
+
+    const num = num => {
+
+        if(num){
+            NumUp--;
+            if(NumUp === -1) NumUp = 2;
+        }else{
+            NumUp++;
+            if(NumUp === 3 ) NumUp = 0;
+        };
+        console.log(NumUp);
+        slideImg.src = ImgList[NumUp];
+
+    };
+
 });
 
 
-function goFamilySite () {
+function goFamilySite() {
     var urlList = [
         "https://company.emart.com/ko/main.do",
         "https://www.shinsegaepoint.com/",
