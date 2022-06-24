@@ -275,7 +275,7 @@
 }
 
 .stop_1{
-    display: none;
+    display: inline-block;
     width: 24px;
     height: 24px;
     background: url(../imgs/main_top_slide.png) 0 -58px no-repeat;

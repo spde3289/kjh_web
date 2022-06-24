@@ -46,7 +46,7 @@ window.addEventListener("load", () => {
     var slideImg = document.querySelector(".changeImg img")
     var dot_on = document.getElementsByClassName('dot')
     dot_on[0].classList.add("dot_on")
-
+    
 
     var ImgList = [
         "./imgs/20211202_0818009_002.jpg",
@@ -55,13 +55,24 @@ window.addEventListener("load", () => {
     ];
     slideImg.src = ImgList[0];
     let NumUp = 0;
+
     right_btn.onclick = () => num(0);
     left_btn.onclick = () => num(1);
-    var arr = dot_on[arr].getAttribute('arr');
-    dot_on[arr].onclick = arr =>dot_on[arr].getAttribute('arr');
+    dot_on[0].onclick = () =>dotSliden(0)
+    dot_on[1].onclick = () =>dotSliden(1)
+    dot_on[2].onclick = () => dotSliden(2)
 
+    function dotSliden(n){
+        console.log(n)
+        for(let i = 0; i <dot_on.length; i ++){
+            dot_on[i].classList.remove('dot_on')
+        }
+        dot_on[n].classList.add("dot_on")
+        slideImg.src = ImgList[n];
+        NumUp = n
+    }
     const num = num => {
-        
+        n= NumUp
         dot_on[NumUp].classList.remove("dot_on");
         if (num) {
             NumUp--;
@@ -70,15 +81,15 @@ window.addEventListener("load", () => {
             NumUp++;
             if (NumUp === ImgList.length) NumUp = 0;
         };
-
-        console.log(NumUp);
         slideImg.src = ImgList[NumUp];
         dot_on[NumUp].classList.add("dot_on")
-        
     };
 
-});
+    var SlideInterval;
 
+
+
+});
 
 function goFamilySite() {
     var urlList = [
