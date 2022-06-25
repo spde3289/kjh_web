@@ -262,20 +262,20 @@
     background-position: 0 -12px;
 }
 
-
-.control_1 .on_1{
-    display: inline-block;
+.slide_on{
+    display: block;
 }
 
-.start_1{
+
+.slide_start{
     display: none;
     width: 24px;
     height: 24px;
     background: url(../imgs/main_top_slide.png) 0 -28px no-repeat;
 }
 
-.stop_1{
-    display: inline-block;
+.slide_stop{
+    display: none;
     width: 24px;
     height: 24px;
     background: url(../imgs/main_top_slide.png) 0 -58px no-repeat;

@@ -37,25 +37,26 @@ window.addEventListener("load", () => {
     };
 
     function preventClick(e) {
-        e.preventDefault()
+        e.preventDefault();
     };
 
     // 이미지 슬라이드 
-    var left_btn = document.getElementsByClassName("btns")[0]
-    var right_btn = document.getElementsByClassName("btns")[1]
-    var slideImg = document.querySelector(".changeImg img")
-    var dot_on = document.getElementsByClassName('dot')
-    dot_on[0].classList.add("dot_on")
+    var left_btn = document.getElementsByClassName("btns")[0];
+    var right_btn = document.getElementsByClassName("btns")[1];
+    var slideImg = document.querySelector(".changeImg img");
+    var dot_on = document.getElementsByClassName('dot');
+    dot_on[0].classList.add("dot_on");
     
-
+    
+    
     var ImgList = [
         "./imgs/20211202_0818009_002.jpg",
         "./imgs/20211202_1543008_040.jpg",
-        "./imgs/20211215_2032024_380.jpg"
+        "./imgs/20211215_2032024_380.jpg",
     ];
     slideImg.src = ImgList[0];
     let NumUp = 0;
-
+    
     right_btn.onclick = () => num(0);
     left_btn.onclick = () => num(1);
     dot_on[0].onclick = () =>dotSliden(0)
