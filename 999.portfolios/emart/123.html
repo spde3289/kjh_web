@@ -21,14 +21,14 @@
   <script>
     const ching = document.getElementById('test_obj');
 
-    var itest = 0
+    var itest = 3
     function test() {
       console.log(itest);
-      if(itest % 2 == 1){
+      if(itest % 2 == 0){
         console.log(itest+"네이버");
         ching.href = "https://www.naver.co.kr"
         itest --
-      }else if(itest % 2 == 0){
+      }else if(itest % 2 == 1){
         console.log(itest+"구글");
         ching.href = "https://www.google.co.kr"
         itest ++

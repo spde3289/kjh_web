@@ -266,6 +266,10 @@
     display: block;
 }
 
+.img::before{
+    content: url("./imgs/20211202_0818009_002.jpg")
+}
+
 
 .slide_start{
     display: none;
@@ -295,7 +299,7 @@
 }
 
 .c1 div a img::before{
-    content: url("./imgs/20211202_0818009_002.jpg")
+    content: url("../imgs/20211202_0818009_002.jpg")
 }
 
 .inner h2{

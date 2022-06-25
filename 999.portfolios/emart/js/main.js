@@ -60,6 +60,7 @@ window.addEventListener("load", () => {
         "./imgs/20211202_1543008_040.jpg",
         "./imgs/20211215_2032024_380.jpg",
     ];
+    
     slideImg.src = ImgList[0];
     let NumUp = 0;
     
