@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     console.log("로드완료")
-
+    // txt 슬리이드
     let anis = document.getElementById("ani");
     let stop = document.getElementById("stop");
     let start = document.getElementById("start");
@@ -45,9 +45,15 @@ window.addEventListener("load", () => {
     var right_btn = document.getElementsByClassName("btns")[1];
     var slideImg = document.querySelector(".changeImg img");
     var dot_on = document.getElementsByClassName('dot');
+    var stopInterval = document.getElementsByClassName('stop')
+    var startInterval = document.getElementsByClassName('start')
+
     dot_on[0].classList.add("dot_on");
+    stopInterval[0].style.display = "block"
     
-    
+    stopInterval[0].onclick = () => imgInterval(0)
+    startInterval[0].onclick = () => imgInterval(1)
+
     
     var ImgList = [
         "./imgs/20211202_0818009_002.jpg",
@@ -64,16 +70,16 @@ window.addEventListener("load", () => {
     dot_on[2].onclick = () => dotSliden(2)
 
     function dotSliden(n){
-        console.log(n)
+        console.log(n);
         for(let i = 0; i <dot_on.length; i ++){
-            dot_on[i].classList.remove('dot_on')
-        }
-        dot_on[n].classList.add("dot_on")
+            dot_on[i].classList.remove('dot_on');
+        };
+        dot_on[n].classList.add("dot_on");
         slideImg.src = ImgList[n];
-        NumUp = n
-    }
+        NumUp = n;
+    };
+
     const num = num => {
-        n= NumUp
         dot_on[NumUp].classList.remove("dot_on");
         if (num) {
             NumUp--;
@@ -83,15 +89,29 @@ window.addEventListener("load", () => {
             if (NumUp === ImgList.length) NumUp = 0;
         };
         slideImg.src = ImgList[NumUp];
-        dot_on[NumUp].classList.add("dot_on")
+        dot_on[NumUp].classList.add("dot_on");
     };
-
-    var SlideInterval;
+    
+    var ImgInterval =setInterval(function(){num(0)},4000)
+    const imgInterval = n =>{
+        
+        if(n){
+            stopInterval[0].style.display = "block"
+            startInterval[0].style.display = "none"
+            ImgInterval = setInterval(function(){num(0)},4000)
+        }else{
+            stopInterval[0].style.display = "none"
+            startInterval[0].style.display = "block"
+            clearInterval(ImgInterval);
+        };
+    };
+    //setInterval(imgInterval(1),2000);
 
 
 
 });
 
+// 사이트 바로가기 
 function goFamilySite() {
     var urlList = [
         "https://company.emart.com/ko/main.do",

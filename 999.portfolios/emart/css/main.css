@@ -346,14 +346,18 @@
     display: block;
 }
 
+
+
 .stop{ 
+    display: none;
     width: 24px;
     height: 24px;
     background: url(../imgs/main_top_slide.png) no-repeat;
     background-position: 0 -58px;
 }
 
-.start{ 
+.start{
+    display: none;
     width: 24px;
     height: 24px;
     background: url(../imgs/main_top_slide.png) no-repeat;
