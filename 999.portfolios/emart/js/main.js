@@ -68,7 +68,7 @@ window.addEventListener("load", () => {
     dot_on[0].onclick = () =>dotSliden(0)
     dot_on[1].onclick = () =>dotSliden(1)
     dot_on[2].onclick = () => dotSliden(2)
-
+    // dot 함수
     function dotSliden(n){
         console.log(n);
         for(let i = 0; i <dot_on.length; i ++){
@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
         slideImg.src = ImgList[n];
         NumUp = n;
     };
-
+    // 이미지 함수
     const num = num => {
         dot_on[NumUp].classList.remove("dot_on");
         if (num) {
@@ -91,7 +91,7 @@ window.addEventListener("load", () => {
         slideImg.src = ImgList[NumUp];
         dot_on[NumUp].classList.add("dot_on");
     };
-    
+    // 인터벌 함수
     var ImgInterval =setInterval(function(){num(0)},4000)
     const imgInterval = n =>{
         

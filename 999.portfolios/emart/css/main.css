@@ -294,6 +294,10 @@
     border-bottom: 2px solid #000;
 }
 
+.c1 div a img::before{
+    content: url("./imgs/20211202_0818009_002.jpg")
+}
+
 .inner h2{
     position: absolute;
     left: 0;

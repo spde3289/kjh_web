@@ -8,6 +8,11 @@
 <body>
   <a id="test_obj" href="https://www.naver.com" target="_blank">페이지 이동</a>
   <button Id="btn" onclick="test(), why()">a링크 href 변경하기</button>
+  <div class="img"> 
+    <a href="#">
+      <img src="./imgs/20211202_0818009_002.jpg" alt="">
+    </a>
+  </div>
   <a href="#">123</a>
   <a href="#" >123</a>
   <a class="alink" href="#" >123</a>
@@ -86,6 +91,9 @@
   </script>
   
   <style>
+    .img::before{
+    content: url("./imgs/20211202_0818009_002.jpg")
+}
     .alink {
       position: absolute;
       bottom: -200px;
