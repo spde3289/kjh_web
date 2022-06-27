@@ -23,20 +23,19 @@ window.addEventListener("load", () => {
     start.addEventListener('click', reani);
 
     // href = # 비활성화
-    var ATags = document.getElementsByTagName('a');
-
-    var ATrue = ATags[2].href;
+    const ATags = document.getElementsByTagName('a');
+    const ATrue = ATags[2].href;
 
     for (let i = 0; i < ATags.length; i++) {
-        if (ATags[i].href == ATrue) {
-            ATags[i].addEventListener("click", () => {
-                console.log(ATags[i], "클릭이벤트");
-                preventClick(event);
+        if (ATags[i].href === ATrue) {
+            ATags[i].addEventListener("click", (e) => {
+                prevent(e)
             });
         };
     };
 
-    function preventClick(e) {
+    const prevent = e => {
+        console.log(e)
         e.preventDefault();
     };
 
@@ -45,14 +44,14 @@ window.addEventListener("load", () => {
     var right_btn = document.getElementsByClassName("btns")[1];
     var slideImg = document.querySelector(".changeImg img");
     var dot_on = document.getElementsByClassName('dot');
-    var stopInterval = document.getElementsByClassName('stop')
-    var startInterval = document.getElementsByClassName('start')
+    var stopInterval = document.getElementsByClassName('stop');
+    var startInterval = document.getElementsByClassName('start');
 
     dot_on[0].classList.add("dot_on");
-    stopInterval[0].style.display = "block"
+    stopInterval[0].style.display = "block";
     
-    stopInterval[0].onclick = () => imgInterval(0)
-    startInterval[0].onclick = () => imgInterval(1)
+    stopInterval[0].onclick = () => imgInterval(0);
+    startInterval[0].onclick = () => imgInterval(1);
 
     
     var ImgList = [
@@ -66,9 +65,9 @@ window.addEventListener("load", () => {
     
     right_btn.onclick = () => num(0);
     left_btn.onclick = () => num(1);
-    dot_on[0].onclick = () =>dotSliden(0)
-    dot_on[1].onclick = () =>dotSliden(1)
-    dot_on[2].onclick = () => dotSliden(2)
+    dot_on[0].onclick = () => dotSliden(0);
+    dot_on[1].onclick = () => dotSliden(1);
+    dot_on[2].onclick = () => dotSliden(2);
     // dot 함수
     function dotSliden(n){
         console.log(n);
@@ -93,17 +92,21 @@ window.addEventListener("load", () => {
         dot_on[NumUp].classList.add("dot_on");
     };
     // 인터벌 함수
-    var ImgInterval =setInterval(function(){num(0)},4000)
-    const imgInterval = n =>{
+    var ImgInterval = setInterval(function () {
+        num(0);
+    }, 4000);
+    const imgInterval = n => {
         
         if(n){
-            stopInterval[0].style.display = "block"
-            startInterval[0].style.display = "none"
-            ImgInterval = setInterval(function(){num(0)},4000)
+            stopInterval[0].style.display = "block";
+            startInterval[0].style.display = "none";
+            ImgInterval = setInterval(function () {
+                num(0);
+            }, 4000);
         }else{
-            stopInterval[0].style.display = "none"
-            startInterval[0].style.display = "block"
-            clearInterval(ImgInterval);
+            stopInterval[0].style.display = "none";
+            startInterval[0].style.display = "block";
+            clearInterval(ImgInterval);;
         };
     };
     //setInterval(imgInterval(1),2000);
