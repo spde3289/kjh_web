@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
 
     for (let i = 0; i < ATags.length; i++) {
         if (ATags[i].href === ATrue) {
-            ATags[i].addEventListener("click", (e) => {
+            ATags[i].addEventListener("click", e => {
                 prevent(e)
             });
         };
