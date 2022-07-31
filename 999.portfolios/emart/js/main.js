@@ -35,7 +35,6 @@ window.addEventListener("load", () => {
     };
 
     const prevent = e => {
-        console.log(e)
         e.preventDefault();
     };
 
@@ -136,12 +135,7 @@ function goFamilySite() {
         "https://www.ssg.com/"
     ];
     var values = document.getElementById("familysite");
-    var link = values.options[values.selectedIndex].value;
-
-    console.log(values)
-    console.log(link)
-    console.log(urlList[link])
-    console.log(isNaN(link));
+    var link = values.value;
 
     if (urlList[link]) {
         window.open(urlList[Number(link)]);
