@@ -91,11 +91,11 @@ window.addEventListener("load", () => {
         dot_on[NumUp].classList.add("dot_on");
     };
     // 인터벌 함수
-    var ImgInterval = setInterval(function () {
+    
+    const ImgInterval = setInterval(function () {
         num(0);
     }, 4000);
     const imgInterval = n => {
-        
         if(n){
             stopInterval[0].style.display = "block";
             startInterval[0].style.display = "none";
